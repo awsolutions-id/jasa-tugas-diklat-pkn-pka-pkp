@@ -5,12 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AW Solutions</title>
     <style>
+        /* Style Umum */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        /* Style Header / Bagian Atas */
+        .header {
+            background-color: #000;
+            color: #D4AF37; /* Warna Emas */
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .header img {
+            height: 80px;
+            width: auto;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            font-family: 'Times New Roman', serif;
+            letter-spacing: 3px;
+        }
+
+        /* Style Background Laptop */
+        .banner-bg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Style Judul */
+        h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin: 30px 0;
+            font-family: 'Times New Roman', serif;
+            letter-spacing: 2px;
+        }
+
         /* Style agar gambar di halaman tidak terpotong */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .gallery-item {
@@ -18,6 +69,7 @@
             overflow: hidden;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background: white;
         }
 
         .gallery-item img {
@@ -64,43 +116,103 @@
             font-weight: bold;
             cursor: pointer;
         }
+
+        /* Style Footer / Kontak */
+        .footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .wa-button {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
 
-    <h1 style="text-align: center; margin-top: 30px; font-size: 2.5em;">PORTFOLIO KAMI</h1>
+    <!-- BAGIAN ATAS: LOGO DAN NAMA -->
+    <div class="header">
+        <img src="AW SOLUTIONS Lo..png" alt="Logo AW Solutions">
+        <h1>AW SOLUTIONS</h1>
+    </div>
 
+    <!-- BACKGROUND LAPTOP -->
+    <img class="banner-bg" src="Background laptop.jpg" alt="Background AW Solutions">
+
+    <!-- BANNER 1 DAN 2 -->
+    <div style="padding: 20px; text-align: center;">
+        <img src="Banner 01.jpg" alt="Banner 1" style="max-width: 90%; height: auto; margin-bottom: 20px;">
+        <img src="Banner 02.jpg" alt="Banner 2" style="max-width: 90%; height: auto;">
+    </div>
+
+    <!-- JUDUL PORTFOLIO -->
+    <h2>PORTFOLIO KAMI</h2>
+
+    <!-- ISI GALERI GAMBAR -->
     <div class="gallery">
-        <!-- Gambar 1 -->
+        <!-- Gambar Majalah -->
         <div class="gallery-item" onclick="openLightbox('Majalah 01.jpg')">
             <img src="Majalah 01.jpg" alt="Desain AW Solutions">
         </div>
 
-        <!-- Gambar 2 -->
         <div class="gallery-item" onclick="openLightbox('Majalah 02.jpg')">
             <img src="Majalah 02.jpg" alt="Desain AW Solutions">
         </div>
 
-        <!-- Gambar 3 -->
         <div class="gallery-item" onclick="openLightbox('Majalah 03.jpg')">
             <img src="Majalah 03.jpg" alt="Desain AW Solutions">
         </div>
 
-        <!-- Gambar 4 -->
         <div class="gallery-item" onclick="openLightbox('Majalah 04.jpg')">
             <img src="Majalah 04.jpg" alt="Desain AW Solutions">
         </div>
 
-        <!-- Gambar 5 -->
         <div class="gallery-item" onclick="openLightbox('Majalah 05.jpg')">
             <img src="Majalah 05.jpg" alt="Desain AW Solutions">
         </div>
+
+        <!-- Gambar Spanduk Nama Stand -->
+        <div class="gallery-item" onclick="openLightbox('Spanduk nama sta...jpg')">
+            <img src="Spanduk nama sta...jpg" alt="Spanduk AW Solutions">
+        </div>
+
+        <!-- Gambar Backdrop -->
+        <div class="gallery-item" onclick="openLightbox('Backdrop 01.jpg')">
+            <img src="Backdrop 01.jpg" alt="Backdrop AW Solutions">
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('Backdrop 02.jpg')">
+            <img src="Backdrop 02.jpg" alt="Backdrop AW Solutions">
+        </div>
+
     </div>
 
-    <!-- Kotak untuk menampilkan gambar besar -->
+    <!-- Kotak untuk menampilkan gambar besar saat diklik -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
         <span class="close-btn">&times;</span>
         <img id="lightbox-img" src="">
+    </div>
+
+    <!-- BAGIAN BAWAH: KONTAK DAN WHATSAPP -->
+    <div class="footer">
+        <p>Untuk pemesanan atau informasi lebih lanjut, hubungi kami melalui:</p>
+        
+        <!-- TOMBOL WHATSAPP DENGAN NOMOR ASLI SEPERTI SEBELUMNYA -->
+        <a class="wa-button" href="https://wa.me/628xxxxxxxxxx" target="_blank">
+            📞 CHAT VIA WHATSAPP
+        </a>
+        
+        <p style="margin-top: 15px;">© 2025 AW Solutions - All Rights Reserved</p>
     </div>
 
     <script>
