@@ -6,7 +6,7 @@
     --dark: #111111;
     --gray: #2c2c2c;
     --light-gray: #e0e0e0;
-    --gold: #D4AF37; /* Warna Emas */
+    --gold: #D4AF37;
     --gold-light: #F0E68C;
     --blue-glow: #00aaff;
 }
@@ -30,7 +30,7 @@ body {
 /* ===================================== */
 .navbar {
     background: transparent;
-    padding: 30px 15px; /* Padding diperbesar biar menu turun */
+    padding: 30px 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,19 +42,19 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 50px;
+    gap: 40px;
     justify-content: center;
     text-align: center;
-    flex-wrap: wrap; /* Biar menu tidak keluar layar di HP kecil */
+    flex-wrap: wrap;
 }
 
 .nav-links a {
     color: var(--light-gray);
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-family: 'Playfair Display', serif;
     text-transform: uppercase;
-    padding: 10px 15px; /* Padding dalam diperbesar */
+    padding: 8px 12px;
     transition: all 0.3s;
     letter-spacing: 2px;
 }
@@ -75,14 +75,13 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding-top: 120px; /* Jarak dari atas diperbesar */
+    padding-top: 100px;
     overflow: hidden;
 }
 
-/* --- GAMBAR DI ATAS LOGO (Business Report & Keyboard) --- */
 .hero-overlay-image {
     position: absolute;
-    top: 18%; /* Posisi gambar disesuaikan */
+    top: 18%;
     left: 50%;
     transform: translateX(-50%);
     width: 70%;
@@ -93,7 +92,6 @@ body {
     box-shadow: 0 0 30px rgba(0, 170, 255, 0.2);
 }
 
-/* --- GARIS PEMBATAS HITAM TRANSPARAN --- */
 .hero-divider {
     position: absolute;
     top: 50%;
@@ -113,7 +111,6 @@ body {
     margin-top: 80px;
 }
 
-/* --- Logo Bulat AW --- */
 .logo-circle {
     width: 130px;
     height: 130px;
@@ -145,10 +142,9 @@ body {
     margin-top: 5px;
 }
 
-/* --- Teks AW SOLUTIONS --- */
 .hero-content h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3.2em;
+    font-size: 3em;
     text-transform: uppercase;
     letter-spacing: 6px;
     text-shadow: 0 0 15px rgba(0,0,0,0.5);
@@ -289,4 +285,13 @@ body {
     font-size: 1.2em;
     margin: 15px 0;
     color: #ddd;
-    text
+    text-align: center;
+}
+
+.wa-button {
+    display: block;
+    background: linear-gradient(45deg, #25D366, #128C7E);
+    color: white !important;
+    padding: 15px;
+    border-radius: 30px;
+    text-decoration
