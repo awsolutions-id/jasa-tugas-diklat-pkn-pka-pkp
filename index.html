@@ -28,14 +28,15 @@
             background-color: var(--black);
             color: #fff;
             overflow-x: hidden;
+            text-align: center; /* Semua jadi rata tengah */
         }
 
         /* ===================================== */
-        /* MENU NAVIGASI - SEKARANG RAPI SEJAJAR */
+        /* MENU NAVIGASI - SEKARANG TIDAK TERPOTONG */
         /* ===================================== */
         .navbar {
             background: transparent;
-            padding: 25px 10px;
+            padding: 25px 5px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -48,22 +49,22 @@
         .nav-links {
             display: flex;
             justify-content: center;
-            gap: 20px; /* Jarak diperkecil biar muat sejajar */
+            gap: 15px; /* Jarak diperkecil lagi */
             text-align: center;
             width: 100%;
-            flex-wrap: nowrap; /* Kunci biar tidak turun ke bawah */
+            flex-wrap: nowrap;
         }
 
         .nav-links a {
             color: var(--light-gray) !important;
             text-decoration: none !important;
-            font-size: 1em; /* Ukuran font diperkecil */
+            font-size: 0.9em; /* Ukuran font diperkecil lagi */
             font-family: 'Playfair Display', serif;
             text-transform: uppercase;
-            padding: 5px 8px;
+            padding: 5px 5px;
             letter-spacing: 1px;
             border-bottom: none !important;
-            white-space: nowrap; /* Kunci biar tulisan tidak putus */
+            white-space: nowrap;
         }
 
         .nav-links a:hover, .nav-links a.active {
@@ -71,7 +72,7 @@
         }
 
         /* ===================================== */
-        /* BAGIAN HOME */
+        /* BAGIAN HOME - SEKARANG PAS DI TENGAH */
         /* ===================================== */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('Background laptop.jpg');
@@ -83,17 +84,20 @@
             justify-content: center;
             position: relative;
             padding-top: 80px;
+            width: 100%;
         }
 
-        /* GAMBAR BUSINESS REPORT - SEKARANG DISEMBUNYIKAN */
         .hero-overlay-image {
-            display: none; /* Ini yang bikin gambar hilang */
+            display: none;
         }
 
         .hero-content {
             text-align: center;
             z-index: 3;
             position: relative;
+            width: 100%;
+            max-width: 100%;
+            padding: 0 15px;
         }
 
         .logo-circle {
@@ -124,9 +128,10 @@
 
         .hero-content h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8em;
+            font-size: 2.5em;
             text-transform: uppercase;
             letter-spacing: 4px;
+            line-height: 1.2;
         }
 
         .hero-content h1 .aw-text { color: white; }
@@ -146,6 +151,7 @@
             padding: 100px 15px 30px;
             background: var(--dark);
             min-height: 100vh;
+            text-align: center;
         }
 
         .content-section.active {
@@ -172,6 +178,7 @@
             gap: 25px;
             max-width: 600px;
             margin: 0 auto;
+            text-align: left;
         }
 
         .service-box {
@@ -291,7 +298,7 @@
                 <p>✅ HARGA BERSAHABAT</p>
                 <p>✅ BERKUALITAS</p>
                 <p>✅ PEMBAYARAN MUDAH</p>
-                <p style="margin-top: 15px; font-style: italic;">🚗 (Siap Antar Hasil)</p>
+                <p style="margin-top: 15px; font-style: italic; text-align: center;">🚗 (Siap Antar Hasil)</p>
             </div>
         </div>
     </div>
