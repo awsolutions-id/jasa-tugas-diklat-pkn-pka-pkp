@@ -432,7 +432,7 @@
             <div class="gallery-item"><img src="Banner 02.jpg" alt="Banner 02"></div>
             <div class="gallery-item"><img src="Majalah 01.jpg" alt="Majalah 01"></div>
             <div class="gallery-item"><img src
-"Majalah 02.jpg" alt="Majalah 02"></div>
+            <div class="gallery-item"><img src="Majalah 02.jpg" alt="Majalah 02"></div>
             <div class="gallery-item"><img src="Majalah 03.jpg" alt="Majalah 03"></div>
             <div class="gallery-item"><img src="Majalah 04.jpg" alt="Majalah 04"></div>
             <div class="gallery-item"><img src="Majalah 05.jpg" alt="Majalah 05"></div>
@@ -460,23 +460,31 @@
     <!-- JAVASCRIPT UNTUK MENU -->
     <!-- ===================================== -->
     <script>
+        // Fungsi untuk berpindah halaman
         function showSection(sectionId) {
-            // Sembunyikan semua section
-            var sections = document.querySelectorAll('.content-section, #home-section');
-            sections.forEach(function(section) {
-                section.classList.remove('active');
-            });
+            
+            // 1. Sembunyikan SEMUA halaman
+            document.getElementById('home-section').style.display = 'none';
+            document.getElementById('services-section').style.display = 'none';
+            document.getElementById('portfolio-section').style.display = 'none';
+            document.getElementById('contact-section').style.display = 'none';
 
-            // Tampilkan section yang dipilih
-            var activeSection = document.getElementById(sectionId + '-section');
-            activeSection.classList.add('active');
-
-            // Ubah tampilan menu aktif
+            // 2. Hapus warna aktif dari semua menu
             var links = document.querySelectorAll('.nav-links a');
             links.forEach(function(link) {
                 link.classList.remove('active');
             });
+
+            // 3. Tampilkan halaman yang diklik
+            document.getElementById(sectionId + '-section').style.display = 'block';
+            
+            // 4. Beri warna emas pada menu yang diklik
             event.target.classList.add('active');
+        }
+        
+        // Saat pertama dibuka, pastikan Home yang tampil
+        window.onload = function() {
+            showSection('home');
         }
     </script>
 
