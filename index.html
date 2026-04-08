@@ -430,4 +430,55 @@
         <div class="gallery">
             <div class="gallery-item"><img src="Banner 01.jpg" alt="Banner 01"></div>
             <div class="gallery-item"><img src="Banner 02.jpg" alt="Banner 02"></div>
-            <div
+            <div class="gallery-item"><img src="Majalah 01.jpg" alt="Majalah 01"></div>
+            <div class="gallery-item"><img src
+"Majalah 02.jpg" alt="Majalah 02"></div>
+            <div class="gallery-item"><img src="Majalah 03.jpg" alt="Majalah 03"></div>
+            <div class="gallery-item"><img src="Majalah 04.jpg" alt="Majalah 04"></div>
+            <div class="gallery-item"><img src="Majalah 05.jpg" alt="Majalah 05"></div>
+        </div>
+    </div>
+
+    <!-- ===================================== -->
+    <!-- HALAMAN KONTAK -->
+    <!-- ===================================== -->
+    <div id="contact-section" class="content-section">
+        <div class="section-title">
+            <h2>HUBUNGI <span>KAMI</span></h2>
+        </div>
+        <div class="contact-info">
+            <h3>ADMIN :</h3>
+            <p>📞 0821 8766 2626</p>
+            <p>📞 0859 7515 3455</p>
+            
+            <a href="https://wa.me/6282187662626" class="wa-button">CHAT VIA WHATSAPP 1</a>
+            <a href="https://wa.me/6285975153455" class="wa-button">CHAT VIA WHATSAPP 2</a>
+        </div>
+    </div>
+
+    <!-- ===================================== -->
+    <!-- JAVASCRIPT UNTUK MENU -->
+    <!-- ===================================== -->
+    <script>
+        function showSection(sectionId) {
+            // Sembunyikan semua section
+            var sections = document.querySelectorAll('.content-section, #home-section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+
+            // Tampilkan section yang dipilih
+            var activeSection = document.getElementById(sectionId + '-section');
+            activeSection.classList.add('active');
+
+            // Ubah tampilan menu aktif
+            var links = document.querySelectorAll('.nav-links a');
+            links.forEach(function(link) {
+                link.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
