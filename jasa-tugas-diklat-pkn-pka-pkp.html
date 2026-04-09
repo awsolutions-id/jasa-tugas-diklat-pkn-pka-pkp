@@ -6,62 +6,184 @@
     <title>Layanan Kami - AW Solutions</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Style sederhana agar tampilan sama dengan halaman utama */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #111111;
-            color: #ffffff;
+        /* Style agar sama persis dengan halaman utama */
+        :root {
+            --primary-color: #ff9500;
+            --bg-dark: #111111;
+            --text-light: #ffffff;
+        }
+        * {
             margin: 0;
-            padding: 20px;
-            line-height: 1.6;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.7;
         }
         .container {
-            max-width: 800px;
+            max-width: 1100px;
             margin: auto;
-            padding-top: 50px;
-        }
-        h1 {
-            color: #FF9500;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .service-item {
-            background: rgba(255,255,255,0.05);
             padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
         }
-        .back-button {
+        /* Header & Navigasi */
+        header {
+            background: rgba(0,0,0,0.5);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 30px;
+        }
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.8;
+        }
+        /* Content Section */
+        .content-section {
+            padding: 50px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .service-card h3 {
+            margin: 20px 0;
+            color: var(--primary-color);
+        }
+        .btn {
             display: inline-block;
-            margin-top: 30px;
-            padding: 10px 20px;
-            background-color: #FF9500;
+            padding: 12px 30px;
+            background: var(--primary-color);
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #e68900;
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Layanan Kami</h1>
-
-        <div class="service-item">
-            <h3>Jasa Pembuatan Makalah</h3>
-            <p>Kami menyediakan jasa pembuatan makalah dengan kualitas terbaik dan tepat waktu.</p>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">AW Solutions</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">BERANDA</a></li>
+                    <li><a href="jasa-tugas-diklat-pkn-pka-pkp.html" class="active">LAYANAN</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <div class="service-item">
-            <h3>Jasa Penulisan Artikel</h3>
-            <p>Tim penulis profesional siap membantu Anda membuat artikel yang menarik dan SEO friendly.</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Layanan Kami</h1>
+            <p>Kami menyediakan berbagai layanan profesional untuk membantu kebutuhan tugas dan pekerjaan Anda dengan kualitas terbaik dan tepat waktu.</p>
         </div>
+    </section>
 
-        <div class="service-item">
-            <h3>Jasa Pengerjaan Tugas Diklat</h3>
-            <p>Membantu menyelesaikan berbagai tugas diklat dengan standar yang diharapkan.</p>
+    <!-- Services Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Apa yang Kami Tawarkan?</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Jasa Pembuatan Makalah</h3>
+                    <p>Kami menyediakan jasa pembuatan makalah dengan kualitas terbaik dan tepat waktu sesuai kebutuhan Anda.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Jasa Penulisan Artikel</h3>
+                    <p>Tim penulis profesional siap membantu Anda membuat artikel yang menarik, informatif, dan SEO friendly.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Jasa Pengerjaan Tugas Diklat</h3>
+                    <p>Membantu menyelesaikan berbagai tugas diklat dengan standar yang diharapkan dan kualitas terjamin.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="index.html" class="btn">Kembali ke Beranda</a>
+            </div>
         </div>
+    </section>
 
-        <a href="index.html" class="back-button">Kembali ke Beranda</a>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 AW Solutions. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
