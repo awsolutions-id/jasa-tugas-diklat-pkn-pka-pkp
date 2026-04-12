@@ -58,6 +58,20 @@
           aspect-ratio: 9 / 16;
           max-height: calc(100vh - 60px);
       }
+      /* Agar posisi hak cipta tetap di bawah */
+      html, body {
+          height: 100%;
+      }
+      body {
+          display: flex;
+          flex-direction: column;
+      }
+      main {
+          flex: 1 0 auto;
+      }
+      footer {
+          flex-shrink: 0;
+      }
     </style>
     
     <!-- Font Eksternal -->
@@ -67,22 +81,23 @@
 </head>
 <body class="bg-gray-100 font-sans">
 
-    <!-- Header / Navigasi: Menu disederhanakan & Tinggi diperpendek -->
+    <!-- Header / Navigasi: Sesuai tangkapan layar -->
     <header class="bg-secondary text-white py-1 shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex justify-center items-center">
-            <!-- Menu: Hanya Beranda, Profil, Portofolio. Ukuran tulisan diperbesar. -->
+            <!-- Menu: Sesuai tangkapan layar (Beranda, Profil, Portofolio) -->
             <nav class="flex flex-wrap justify-center gap-10 text-lg font-bold py-1">
                 <a href="#" class="menu-link active py-1 px-2" onclick="changePage('beranda')">Beranda</a>
                 <a href="#" class="menu-link py-1 px-2" onclick="changePage('profil')">Profil</a>
-                <a href="#" class="menu-link py-1 px-2" onclick="changePage('layanan')">Layanan</a>
                 <a href="#" class="menu-link py-1 px-2" onclick="changePage('portofolio')">Portofolio</a>
-                <a href="#" class="menu-link py-1 px-2" onclick="changePage('kontak')">Kontak</a>
+                <!-- Menu Layanan dan Kontak disembunyikan dari navigasi utama sesuai tangkapan layar -->
+                <a href="#" class="menu-link py-1 px-2 hidden" onclick="changePage('layanan')">Layanan</a>
+                <a href="#" class="menu-link py-1 px-2 hidden" onclick="changePage('kontak')">Kontak</a>
             </nav>
         </div>
     </header>
 
     <main class="container mx-auto">
-        <!-- Halaman Beranda: Posisi konten dinaikkan & Tombol diperpendek -->
+        <!-- Halaman Beranda: Sesuai tangkapan layar -->
         <section id="beranda" class="page-content active">
             <!-- Bagian Gambar Utama / Hero dengan rasio 9:16 -->
             <div class="relative bg-secondary text-white overflow-hidden hero-ratio w-full">
@@ -108,10 +123,10 @@
                         Pengetikan Desain & Cetak Solusi
                     </p>
                     <p class="text-[clamp(0.9rem,3vw,1.2rem)] mb-6 max-w-2xl text-white font-bold leading-relaxed">
-                        Terpercaya untuk kebutuhan <strong>Jasa Tugas Diklat PKN, PKA, PKP</strong> berkualitas tinggi
+                        Terpercaya dokumen berkualitas tinggi
                     </p>
                     
-                    <!-- Tinggi tombol diperpendek (py-2 menjadi py-1.5) -->
+                    <!-- Tombol sesuai tangkapan layar -->
                     <div class="flex flex-col gap-3 justify-center w-full max-w-xs">
                         <a href="#" onclick="changePage('layanan')" class="bg-primary hover:bg-primary/90 text-white font-bold py-1.5 px-6 rounded-full transition-all duration-300 shadow-lg text-lg">
                             Layanan Kami
@@ -337,10 +352,10 @@
                         <video src="Cetak Majalah 01.mp4" alt="Video Hasil Karya Jasa Tugas Diklat PKN, PKA, PKP" controls class="w-full h-full object-cover"></video>
                     </div>
                     <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
-                        <video src="Catak Majalah 02.mp4" alt="Video Hasil Karya Jasa Tugas Diklat PKN, PKA, PKP" controls class="w-full h-full object-cover"></video>
+                        <video src="Cetak Majalah 02.mp4" alt="Video Hasil Karya Jasa Tugas Diklat PKN, PKA, PKP" controls class="w-full h-full object-cover"></video>
                     </div>
                     <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
-                        <video src="Model Stand pameran.mp4" alt="Video Hasil Karya Jasa Tugas Diklat PKN, PKA, PKP" controls class="w-full h-full object-cover"></video>
+                        <video src="Model Stad pameran.mp4" alt="Video Hasil Karya Jasa Tugas Diklat PKN, PKA, PKP" controls class="w-full h-full object-cover"></video>
                     </div>
                 </div>
             </div>
@@ -400,8 +415,8 @@
         </section>
     </main>
 
-    <!-- Footer: Ukuran dan posisi disesuaikan agar pas -->
-    <footer class="bg-dark text-gray-400 py-3 px-3 text-center mt-4 font-bold text-sm">
+    <!-- Footer: Posisi diatur agar tetap di bagian paling bawah -->
+    <footer class="bg-dark text-gray-400 py-3 px-3 text-center font-bold text-sm w-full">
         <p>Copyright &copy; 2026 AW Solutions - Penyedia Jasa Tugas Diklat PKN, PKA, PKP. All rights reserved.</p>
     </footer>
 
@@ -433,4 +448,4 @@
 
 </body>
 </html>
-        
+    
