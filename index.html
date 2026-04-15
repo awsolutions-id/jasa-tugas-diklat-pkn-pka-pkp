@@ -48,10 +48,10 @@
       .menu-link {font-size: 15px; color: #f3d278; text-decoration: none; padding-bottom: 4px; font-weight: 600;}
       .menu-link.active {border-bottom: 3px solid #fff; font-weight: 600;}
       .btn-custom {border-radius: 9999px; border: 2px solid; text-align: center; display: block; padding: 12px 8px;}
-      /* Kotak hak cipta: Lebar penuh tanpa batas, teks rata tengah 2 baris */
+      /* Kotak hak cipta: Lebar penuh tanpa batas */
       .copyright-container {background: rgba(10, 36, 99, 0.6); padding: 12px 0; width: 100%; margin: 1rem 0 0 0;}
       
-      /* Penyesuaian khusus untuk mode mendatar (landscape) */
+      /* Penyesuaian khusus untuk mode mendatar (landscape) - 1 Baris */
       @media (orientation: landscape) {
           .menu-link {font-size: 14px;}
           .text-[clamp(1.6rem,7vw,2.2rem)] {font-size: clamp(1.4rem, 5vw, 1.8rem) !important;}
@@ -65,21 +65,24 @@
           .py-2 {padding-top: 0.4rem !important; padding-bottom: 0.4rem !important;}
           .px-5 {padding-left: 1rem !important; padding-right: 1rem !important;}
           .copyright-container {padding: 10px 0;}
-          .copyright-container p {font-size: 0.7rem !important;}
+          .copyright-container p {font-size: 0.7rem !important; white-space: nowrap; text-align: center !important;}
+          .copyright-container br {display: none;} /* Sembunyikan pemisah baris */
+          .garis-pemisah {margin-top: 1rem !important; margin-bottom: 1rem !important;}
       }
       
-      /* Penyesuaian khusus untuk mode potrait HP */
+      /* Penyesuaian khusus untuk mode potrait HP - 2 Baris */
       @media (orientation: portrait) {
           .w-16 {width: 3.2rem !important; height: 3.2rem !important;}
           .mt-4 {margin-top: 0.75rem !important;}
           .mb-4 {margin-bottom: 0.75rem !important;}
           .gap-3 {gap: 0.5rem !important;}
-          .py-2 {padding-top: 0.4rem !important; padding-bottom: 0.4rem !important;}
+          .py-2 {padding-top: 0.3rem !important; padding-bottom: 0.3rem !important;}
           .px-5 {padding-left: 1rem !important; padding-right: 1rem !important;}
           .text-[clamp(1.6rem,7vw,2.2rem)] {font-size: clamp(1.5rem, 6vw, 2rem) !important;}
-          /* Pastikan teks hak cipta 2 baris */
           .copyright-container {padding: 12px 5px;}
-          .copyright-container p {font-size: 0.75rem !important; line-height: 1.4;}
+          .copyright-container p {font-size: 0.75rem !important; line-height: 1.4; text-align: center !important;}
+          .copyright-container br {display: inline;} /* Tampilkan pemisah baris */
+          .garis-pemisah {margin-top: 1rem !important; margin-bottom: 1rem !important;}
       }
     </style>
 </head>
@@ -180,26 +183,29 @@
 
             <!-- Bagian Bawah Beranda (Dinaikkan posisinya) -->
             <div class="text-center mb-3 px-3">
-                <!-- Garis pemisah dinaikkan sedikit -->
-                <hr class="border-gold/40 w-3/4 mx-auto mb-4 mt-4">
+                <!-- Garis pemisah dinaikkan lebih sedikit lagi agar pas di tengah -->
+                <hr class="border-gold/40 w-3/4 mx-auto garis-pemisah">
                 <h2 class="font-bold text-gold text-lg">Pengetikan, Desain & Cetak</h2>
                 <p class="text-gold/80 text-xs mt-1 mb-3">solusi terpercaya dokumen berkualitas tinggi</p>
 
                 <div class="flex justify-center gap-3 mb-4 max-w-md mx-auto">
                     <a href="#" onclick="changePage('layanan', event)" class="btn-custom border-white text-white py-2 px-5 font-bold bg-transparent hover:bg-white/10 text-sm">
-                        Layanan Kami</a>
+                        Layanan Kami
+                    </a>
                     <a href="#" onclick="changePage('kontak', event)" class="btn-custom border-white text-white py-2 px-5 font-bold bg-transparent hover:bg-white/10 text-sm">
-                        Hubungi Kami</a>
+                        Hubungi Kami
+                    </a>
                 </div>
                 
-                <!-- Kotak hak cipta lebar penuh tanpa batas, teks rata tengah 2 baris -->
+                <!-- Kotak hak cipta lebar penuh tanpa batas, teks rata tengah -->
                 <div class="copyright-container">
-                    <p class="text-gold/80 text-center">Copyright © 2026 AW Solutions - Penyedia Jasa Tugas Diklat PKN, PKA, PKP.<br>All rights reserved.</p>
+                    <p class="text-gold/80">Copyright © 2026 AW Solutions - Penyedia Jasa Tugas Diklat PKN, PKA, PKP. <br> All rights reserved.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
     <!-- Halaman Profil -->
     <section id="profil" class="page-content">
         <div class="relative min-h-screen h-auto">
