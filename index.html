@@ -74,7 +74,7 @@
           .tombol-bawah {margin-bottom: 1rem !important;}
       }
       
-      /* --- PENGATURAN KHUSUS POTRAIT (GARIS DINAIKKAN LEBIH TINGGI SESUAI PERMINTAAN) --- */
+      /* --- PENGATURAN KHUSUS POTRAIT (HANYA GARIS YANG DINAIKKAN) --- */
       @media (orientation: portrait) {
           .w-16 {width: 3.2rem !important; height: 3.2rem !important;}
           .mt-4 {margin-top: 0.75rem !important;}
@@ -88,17 +88,18 @@
           .copyright-container p {font-size: 0.75rem !important; line-height: 1.5; text-align: center !important;}
           .copyright-container br {display: inline;}
 
-          /* 1. PKN-PKA-PKP & Garis: Dinaikkan lebih tinggi */
+          /* Posisi daftar PKN/PKA/PKP dikembalikan ke semula */
           .daftar-pendidikan {margin-top: 1rem !important; margin-bottom: 0 !important;} 
-          /* Nilai margin-top diubah menjadi negatif agar posisi garis naik melewati jarak sebelumnya */
-          .garis-pemisah {margin-top: -0.25rem !important; margin-bottom: 0.5rem !important;}
+          /* HANYA garis dinaikkan sedikit (sesuaikan angka negatifnya jika masih kurang/lebih) */
+          .garis-pemisah {margin-top: -1rem !important; margin-bottom: 1rem !important;}
 
-          /* 2. Bagian Pengetikan & Solusi: Tetap pas */
+          /* Bagian bawah tetap */
           .bagian-judul-bawah {margin-top: 0 !important; margin-bottom: 0.3rem !important;}
           .bagian-deskripsi-bawah {margin-top: 0.1rem !important; margin-bottom: 1rem !important;}
           .tombol-bawah {margin-bottom: 1.25rem !important;}
       }
     </style>
+
 </head>
 <body class="bg-gray-100">
     <main class="w-full">
@@ -216,7 +217,7 @@
                         
                         <!-- 3. Hak Cipta Rata Tengah Sesuai Keinginan -->
                         <div class="copyright-container">
-                             <p class="text-gold/80">Copyright © 2026 AW Solutions - Penyedia Jasa Tugas Diklat PKN, PKA, PKP. <br> All rights reserved.</p>
+                            <p class="text-gold/80">Copyright © 2026 AW Solutions - Penyedia Jasa Tugas Diklat PKN, PKA, PKP</p>
                         </div>
                     </div>
                 </div>
