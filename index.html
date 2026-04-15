@@ -225,8 +225,15 @@
         </section>
 
             <!-- Halaman Profil -->
-    <section id="profil" class="page-content">
-        <div class="relative min-h-screen h-auto">
+<section id="profil" class="page-content">
+    <div class="relative min-h-screen h-auto overflow-hidden">
+        <!-- Latar Belakang Sama Seperti Beranda -->
+        <div class="absolute inset-0 z-0">
+            <img src="Latar Mengetik 01.jpg" alt="Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#051a44]/60 to-[#051a44]/95 z-10"></div>
+        </div>
+        
+        <div class="relative z-20">
             <div class="menu-container">
                 <a href="#" class="menu-link" onclick="changePage('beranda', event)">Beranda</a>
                 <a href="#" class="menu-link active" onclick="changePage('profil', event)">Profil</a>
@@ -235,18 +242,27 @@
                 <a href="#" class="menu-link" onclick="changePage('kontak', event)">Kontak</a>
             </div>
             
-            <div class="max-w-4xl mx-auto bg-white p-4 rounded-lg shadow-md m-4">
-                <h2 class="font-black mb-3 text-gray-800 border-b pb-2">Profil Kami</h2>
-                <p class="text-gray-700 leading-relaxed mb-2 font-bold text-sm">
-                    Kami adalah penyedia jasa profesional yang berfokus pada penyusunan dokumen, pengetikan, desain, dan percetakan. Berpengalaman dalam menangani kebutuhan <strong>Jasa Tugas Diklat PKN, PKA, maupun PKP</strong> dengan kualitas terbaik dan ketepatan waktu.</p>
-                <p class="text-gray-700 leading-relaxed mb-2 font-bold text-sm">
-                    Dengan tim yang terampil dan peralatan yang memadai, kami berkomitmen untuk memberikan hasil kerja yang rapi, sesuai aturan, dan memuaskan klien. Kami memahami pentingnya <strong>Jasa Tugas Diklat PKN, PKA, dan PKP</strong> bagi pengembangan karir Anda, sehingga kami selalu berusaha memberikan yang terbaik.</p>
+            <div class="max-w-4xl mx-auto bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-md m-4">
+                <h2 class="font-black mb-3 text-[#0a2463] border-b-2 border-[#f3d278] pb-2 font-judul">Profil Kami</h2>
+                <p class="text-gray-700 leading-relaxed mb-4 font-bold text-sm">
+                    Kami adalah penyedia jasa profesional yang berfokus pada penyusunan dokumen, pengetikan, desain, dan percetakan. Berpengalaman dalam menangani kebutuhan <strong>Jasa Tugas Diklat PKN (Pelatihan Kepemimpinan Nasional), PKA (Pelatihan Kepemimpinan Administrator), maupun PKP (Pelatihan Kepemimpinan Pengawas)</strong> dengan kualitas terbaik dan ketepatan waktu.
+                </p>
+                <p class="text-gray-700 leading-relaxed mb-4 font-bold text-sm">
+                    Dengan tim yang terampil dan peralatan yang memadai, kami berkomitmen untuk memberikan hasil kerja yang rapi, sesuai aturan, dan memuaskan klien. Kami memahami pentingnya <strong>Jasa Tugas Diklat PKN (Pelatihan Kepemimpinan Nasional), PKA (Pelatihan Kepemimpinan Administrator), dan PKP (Pelatihan Kepemimpinan Pengawas)</strong> bagi pengembangan karir Anda, sehingga kami selalu berusaha memberikan yang terbaik.
+                </p>
                 <p class="text-gray-700 leading-relaxed font-bold text-sm">
-                    Berlokasi di Makassar, Sulawesi Selatan, kami siap melayani kebutuhan <strong>Jasa Tugas Diklat PKN, PKA, PKP</strong> Anda baik secara langsung maupun daring.</p>
+                    Berlokasi di Makassar, Sulawesi Selatan, kami siap melayani kebutuhan <strong>Jasa Tugas Diklat PKN (Pelatihan Kepemimpinan Nasional), PKA (Pelatihan Kepemimpinan Administrator), PKP (Pelatihan Kepemimpinan Pengawas)</strong> Anda baik secara langsung maupun daring.
+                </p>
+            </div>
+
+            <!-- Tambahan Hak Cipta agar struktur senada dengan beranda -->
+            <div class="copyright-container mt-8">
+                <p class="text-gold/80 text-center">Copyright © 2026 AW Solutions - Penyedia Jasa Tugas Diklat</p>
             </div>
         </div>
-    </section>
-            
+    </div>
+</section>
+             
          <!-- Halaman Layanan -->
     <section id="layanan" class="page-content">
         <div class="relative min-h-screen h-auto">
