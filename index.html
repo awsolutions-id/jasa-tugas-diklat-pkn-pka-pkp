@@ -30,16 +30,31 @@
     
     <style>
       * {box-sizing: border-box; margin: 0; padding: 0;}
-      html, body {width: 100%; height: 100%; overflow-x: hidden; font-family: Arial, sans-serif;}
-      .screen-ratio {width: 100%; overflow: auto;}
-      /* Perbaikan agar pas di layar HP */
-      .page-content {display: none; min-height: 100vh;}
+      html, body {width: 100%; height: 100%; font-family: Arial, sans-serif;}
+      /* Mengizinkan pengguliran vertikal di semua kondisi */
+      .screen-ratio {width: 100%; height: 100%; overflow-y: auto; overflow-x: hidden;}
+      .page-content {display: none; min-height: 100vh; height: auto;}
       .page-content.active {display: block;}
-      /* Perbaikan menu agar tidak bertumpuk */
+      /* Menu tetap rapi di semua orientasi */
       .menu-container {background: rgba(10, 36, 99, 0.6); padding: 8px 0; position: sticky; top:0; z-index:99; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 12px;}
       .menu-link {font-size: 15px; color: #f3d278; text-decoration: none; padding-bottom: 4px;}
       .menu-link.active {border-bottom: 3px solid #fff; font-weight: bold;}
       .btn-custom {border-radius: 9999px; border: 2px solid; text-align: center; display: block; padding: 12px 8px;}
+      
+      /* Penyesuaian khusus untuk mode mendatar (landscape) */
+      @media (orientation: landscape) {
+          .menu-link {font-size: 14px;}
+          .text-[clamp(1.6rem,7vw,2.2rem)] {font-size: clamp(1.4rem, 5vw, 1.8rem) !important;}
+          .text-lg {font-size: 1rem !important;}
+          .text-base {font-size: 0.9rem !important;}
+          .text-sm {font-size: 0.8rem !important;}
+          .w-20 {width: 4rem !important; height: 4rem !important;}
+          .mt-4 {margin-top: 0.75rem !important;}
+          .mb-4 {margin-bottom: 0.75rem !important;}
+          .gap-3 {gap: 0.5rem !important;}
+          .py-2 {padding-top: 0.4rem !important; padding-bottom: 0.4rem !important;}
+          .px-5 {padding-left: 1rem !important; padding-right: 1rem !important;}
+      }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -48,13 +63,12 @@
         
         <!-- HALAMAN BERANDA -->
 <section id="beranda" class="page-content active">
-    <!-- Perbaikan tinggi agar pas di layar HP -->
-    <div class="relative min-h-screen max-h-screen overflow-hidden">
+    <div class="relative min-h-screen h-auto overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="Latar Mengetik 01.jpg" alt="Background" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-b from-[#051a44]/60 to-[#051a44]/95 z-10"></div>
         </div>
-        <div class="relative z-20 min-h-screen max-h-screen flex flex-col justify-between">
+        <div class="relative z-20 min-h-screen h-auto flex flex-col justify-between">
             <div class="menu-container">
                 <a href="#" class="menu-link active" onclick="changePage('beranda', event)">Beranda</a>
                 <a href="#" class="menu-link" onclick="changePage('profil', event)">Profil</a>
@@ -68,10 +82,8 @@
                     <svg width="100%" height="100%" viewBox="0 0 100 100">
                         <path d="M50 2 L98 25 L98 75 L50 98 L2 75 L2 25 Z" fill="#0a2463" stroke="#f3d278" stroke-width="3"></path>
                     </svg>
-                    <!-- Tulisan AW diubah jadi putih dan diperkecil -->
                     <span class="absolute text-white text-2xl font-black">AW</span>
                 </div>
-                <!-- Tulisan AW Solutions diubah jadi putih -->
                 <h2 class="text-white text-lg font-bold mb-1">AW Solutions</h2>
                 <h1 class="font-black text-gold my-1 tracking-wide text-[clamp(1.6rem,7vw,2.2rem)]">
                     Jasa Tugas Diklat
@@ -93,7 +105,6 @@
                                 </svg>
                                 <div>
                                     <p class="text-white text-sm font-semibold leading-tight">Pelatihan Kepemimpinan Nasional</p>
-                                    <!-- Posisi dinaikkan agar sejajar -->
                                     <p class="text-white text-xs font-normal mt-0">Tk. II dan Tk. I</p>
                                 </div>
                             </div>
@@ -113,7 +124,6 @@
                                     <path d="M9 12h6" />
                                     <path d="M12 16V8" />
                                 </svg>
-                                <!-- Posisi dinaikkan agar sejajar -->
                                 <p class="text-white text-sm font-semibold leading-tight mt-0">Pelatihan Kepemimpinan Administrator</p>
                             </div>
                         </div>
@@ -130,7 +140,6 @@
                                     <circle cx="12" cy="12" r="3" />
                                     <path d="M12 1v4m0 14v-4M4.22 4.22l2.83 2.83m9.9 9.9l2.83 2.83M1 12h4m14 0h4M4.22 19.78l2.83-2.83m9.9-9.9l2.83-2.83" />
                                 </svg>
-                                <!-- Posisi dinaikkan agar sejajar -->
                                 <p class="text-white text-sm font-semibold leading-tight mt-0">Pelatihan Kepemimpinan Pengawas</p>
                             </div>
                         </div>
@@ -152,7 +161,6 @@
                     </a>
                 </div>
                 
-                <!-- Menghapus garis bawah tambahan -->
                 <p class="text-gold/80 text-xs">Copyright © 2026 AW Solutions - Penyedia Jasa Tugas Diklat PKN, PKA, PKP. All rights reserved.</p>
             </div>
         </div>
@@ -161,7 +169,7 @@
 
     <!-- Halaman Profil -->
     <section id="profil" class="page-content">
-        <div class="relative min-h-screen">
+        <div class="relative min-h-screen h-auto">
             <div class="menu-container">
                 <a href="#" class="menu-link" onclick="changePage('beranda', event)">Beranda</a>
                 <a href="#" class="menu-link active" onclick="changePage('profil', event)">Profil</a>
@@ -184,9 +192,9 @@
             </div>
         </div>
     </section>
-        <!-- Halaman Layanan -->
+    <!-- Halaman Layanan -->
     <section id="layanan" class="page-content">
-        <div class="relative min-h-screen">
+        <div class="relative min-h-screen h-auto">
             <div class="menu-container">
                 <a href="#" class="menu-link" onclick="changePage('beranda', event)">Beranda</a>
                 <a href="#" class="menu-link" onclick="changePage('profil', event)">Profil</a>
@@ -265,9 +273,9 @@
             </div>
         </div>
     </section>
-        <!-- Halaman Portofolio -->
+                 <!-- Halaman Portofolio -->
     <section id="portofolio" class="page-content">
-        <div class="relative min-h-screen">
+        <div class="relative min-h-screen h-auto">
             <div class="menu-container">
                 <a href="#" class="menu-link" onclick="changePage('beranda', event)">Beranda</a>
                 <a href="#" class="menu-link" onclick="changePage('profil', event)">Profil</a>
@@ -314,9 +322,9 @@
             </div>
         </div>
     </section>
-                <!-- Halaman Kontak -->
+    <!-- Halaman Kontak -->
     <section id="kontak" class="page-content">
-        <div class="relative min-h-screen">
+        <div class="relative min-h-screen h-auto">
             <div class="menu-container">
                 <a href="#" class="menu-link" onclick="changePage('beranda', event)">Beranda</a>
                 <a href="#" class="menu-link" onclick="changePage('profil', event)">Profil</a>
@@ -410,5 +418,3 @@
 
 </body>
 </html>
-
-                            
