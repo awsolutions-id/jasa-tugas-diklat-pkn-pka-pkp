@@ -107,46 +107,54 @@
                 <!-- Kolom Kiri: Tombol Layanan -->
                 <div class="p-3 bg-gray-50 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')] flex flex-col justify-center gap-2 py-2">
                     
-                    <!-- Kotak PKN (Bisa Diklik) -->
-                    <div id="pknBtn" class="box-3d text-white p-3 cursor-pointer transition duration-300 hover:scale-[1.01]" onclick="openModal('pknModal')">
+                    <!-- Kotak PKN (Dengan Tanda Klik) -->
+                    <div id="pknBtn" class="box-3d text-white p-3 cursor-pointer transition duration-300 hover:scale-[1.01] relative" onclick="openModal('pknModal')">
                         <div class="flex items-center gap-2 mb-1">
                             <i class="fa fa-th-large text-gold text-lg"></i>
                             <h3 class="font-bold text-lg text-gold">PKN</h3>
                         </div>
                         <p class="text-gray-100 text-sm pl-6 leading-tight">(Pelatihan Kepemimpinan Nasional)</p>
-                        <p class="text-gray-100 text-sm pl-6 leading-tight">Tingkat II & I</p>
+                        <p class="text-gray-100 text-sm pl-6 leading-tight mt-0.5">Tingkat II & Tingkat I</p>
+                        <!-- Tanda Klik -->
+                        <span class="absolute bottom-2 right-3 text-xs text-gold/80"><i class="fa fa-hand-pointer-o mr-1"></i>Klik</span>
                     </div>
 
-                    <!-- Kotak PKA (Bisa Diklik) -->
-                    <div id="pkaBtn" class="bg-primary text-white p-3 rounded-lg shadow-lg cursor-pointer transition duration-300 hover:scale-[1.01]" style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); background: linear-gradient(145deg, #1a3b7a, #0a2463); border-radius: 8px;" onclick="openModal('pkaModal')">
+                    <!-- Kotak PKA (Dengan Tanda Klik) -->
+                    <div id="pkaBtn" class="bg-primary text-white p-3 rounded-lg shadow-lg cursor-pointer transition duration-300 hover:scale-[1.01] relative" style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); background: linear-gradient(145deg, #1a3b7a, #0a2463); border-radius: 8px;" onclick="openModal('pkaModal')">
                         <div class="flex items-center gap-2 mb-1">
                             <i class="fa fa-plus-square-o text-gold text-lg"></i>
                             <h3 class="font-bold text-lg text-gold">PKA</h3>
                         </div>
                         <p class="text-gray-100 text-sm pl-6 leading-tight">(Pelatihan Kepemimpinan Administrator)</p>
+                        <!-- Tanda Klik -->
+                        <span class="absolute bottom-2 right-3 text-xs text-gold/80"><i class="fa fa-hand-pointer-o mr-1"></i>Klik</span>
                     </div>
 
-                    <!-- Kotak PKP (Bisa Diklik) -->
-                    <div id="pkpBtn" class="bg-primary text-white p-3 rounded-lg shadow-lg cursor-pointer transition duration-300 hover:scale-[1.01]" style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); background: linear-gradient(145deg, #1a3b7a, #0a2463); border-radius: 8px;" onclick="openModal('pkpModal')">
+                    <!-- Kotak PKP (Dengan Tanda Klik) -->
+                    <div id="pkpBtn" class="bg-primary text-white p-3 rounded-lg shadow-lg cursor-pointer transition duration-300 hover:scale-[1.01] relative" style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); background: linear-gradient(145deg, #1a3b7a, #0a2463); border-radius: 8px;" onclick="openModal('pkpModal')">
                         <div class="flex items-center gap-2 mb-1">
                             <i class="fa fa-sun-o text-gold text-lg"></i>
                             <h3 class="font-bold text-lg text-gold">PKP</h3>
                         </div>
                         <p class="text-gray-100 text-sm pl-6 leading-tight">(Pelatihan Kepemimpinan Pengawas)</p>
+                        <!-- Tanda Klik -->
+                        <span class="absolute bottom-2 right-3 text-xs text-gold/80"><i class="fa fa-hand-pointer-o mr-1"></i>Klik</span>
                     </div>
 
-                    <!-- Kotak Desain & Cetak (Bisa Diklik) -->
-                    <div id="cetakBtn" class="box-gold-3d text-primary p-3 cursor-pointer transition duration-300 hover:scale-[1.01]" onclick="openModal('cetakModal')">
+                    <!-- Kotak Desain & Cetak (Dengan Tanda Klik) -->
+                    <div id="cetakBtn" class="box-gold-3d text-primary p-3 cursor-pointer transition duration-300 hover:scale-[1.01] relative" onclick="openModal('cetakModal')">
                         <div class="flex items-center gap-2">
                             <i class="fa fa-file-text-o text-primary text-lg"></i>
                             <h3 class="font-bold text-lg text-primary">Design / Cetak</h3>
                         </div>
+                        <!-- Tanda Klik -->
+                        <span class="absolute bottom-2 right-3 text-xs text-primary/60"><i class="fa fa-hand-pointer-o mr-1"></i>Klik</span>
                     </div>
 
                 </div>
 
                 <!-- Kolom Kanan: Gambar Gedung -->
-                <div class="h-[180px] md:h-auto relative overflow-hidden bg-gray-200">
+                <div class="h-[150px] md:h-auto relative overflow-hidden bg-gray-200">
                     <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gedung Kantor" class="w-full h-full object-cover object-center">
                 </div>
 
@@ -230,7 +238,11 @@
 
         // Fungsi menutup modal
         function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
+            document.getElementById(modalId).getElementsByClassName('modal-content')[0].style.transform = "scale(0.9)";
+            setTimeout(() => {
+                document.getElementById(modalId).style.display = "none";
+                document.getElementById(modalId).getElementsByClassName('modal-content')[0].style.transform = "";
+            }, 200);
         }
 
         // Menutup modal jika pengguna mengklik di luar konten
@@ -241,4 +253,5 @@
         }
     </script>
 </body>
-</html>
+        </html>
+    
