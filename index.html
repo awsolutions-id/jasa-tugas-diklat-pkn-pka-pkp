@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Produk - AW Solutions</title>
     <style>
-        /* BACKGROUND BIRU DENGAN GAMBAR PRINTING SAMAR-SAMAR */
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #0a2463; /* Warna Biru Dasar */
+            background-color: #0a2463;
             background-image: url('https://images.unsplash.com/photo-1562976540-1502c2145186?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-blend-mode: overlay;
             background-size: cover;
@@ -23,81 +22,118 @@
 
     <div class="min-h-screen flex flex-col">
         
-        <!-- JUDUL ATAS RATA TENGAH -->
+        <!-- JUDUL DAN DESKRIPSI -->
         <div class="py-8 px-4 text-center">
             <h1 style="font-size: clamp(2.2rem, 7vw, 3.5rem); color: #f3d278; font-weight: 900; line-height: 1.2; margin: 0;">Portfolio Produk</h1>
             <h2 style="font-size: clamp(1.8rem, 6vw, 3rem); color: #f3d278; font-weight: bold; margin-top: 10px;">AW Solutions</h2>
 
-            <!-- DISKRIPSI SUDAH DINAIKKAN KE SINI -->
             <p style="color: #f3d278; font-size: 1.1rem; max-width: 700px; margin: 20px auto 0 auto;">
-                Kami menyediakan layanan percetakan digital printing berkualitas tinggi dengan hasil yang presisi, cepat, dan memuaskan untuk berbagai kebutuhan bisnis Anda.
+                Kami menyediakan layanan percetakan digital printing berkualitas tinggi dengan hasil yang presisi, cepat, dan memuaskan.
             </p>
         </div>
 
-        <!-- ISI KOTAK DENGAN JARAK LEBAR KIRI KANAN -->
-        <div class="flex-grow px-12 pb-8">
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; max-width: 800px; margin: 0 auto;">
+        <!-- ISI PRODUK DENGAN TOMBOL -->
+        <div class="flex-grow px-10 pb-8">
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 800px; margin: 0 auto;">
 
-                <!-- KOTAK 1 -->
-                <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white;">
-                    <img src="Majalah 01.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                <!-- ITEM 1 -->
+                <div style="text-align: center;">
+                    <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white; margin-bottom: 12px;">
+                        <img src="Majalah 01.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <button onclick="lihatDetail('Produk 1')" style="background-color: #f3d278; color: #0a2463; border: none; padding: 8px 20px; border-radius: 20px; font-weight: bold; cursor: pointer;">Lihat Detail</button>
                 </div>
 
-                <!-- KOTAK 2 -->
-                <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white;">
-                    <img src="Majalah 02.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                <!-- ITEM 2 -->
+                <div style="text-align: center;">
+                    <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white; margin-bottom: 12px;">
+                        <img src="Majalah 02.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <button onclick="lihatDetail('Produk 2')" style="background-color: #f3d278; color: #0a2463; border: none; padding: 8px 20px; border-radius: 20px; font-weight: bold; cursor: pointer;">Lihat Detail</button>
                 </div>
 
-                <!-- KOTAK 3 -->
-                <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white;">
-                    <img src="Majalah 03.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                <!-- ITEM 3 -->
+                <div style="text-align: center;">
+                    <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white; margin-bottom: 12px;">
+                        <img src="Majalah 03.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <button onclick="lihatDetail('Produk 3')" style="background-color: #f3d278; color: #0a2463; border: none; padding: 8px 20px; border-radius: 20px; font-weight: bold; cursor: pointer;">Lihat Detail</button>
                 </div>
 
-                <!-- KOTAK 4 -->
-                <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white;">
-                    <img src="Majalah 04.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                <!-- ITEM 4 -->
+                <div style="text-align: center;">
+                    <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white; margin-bottom: 12px;">
+                        <img src="Majalah 04.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <button onclick="lihatDetail('Produk 4')" style="background-color: #f3d278; color: #0a2463; border: none; padding: 8px 20px; border-radius: 20px; font-weight: bold; cursor: pointer;">Lihat Detail</button>
                 </div>
 
-                <!-- KOTAK 5 -->
-                <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white;">
-                    <img src="Banner 01.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                <!-- ITEM 5 -->
+                <div style="text-align: center;">
+                    <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white; margin-bottom: 12px;">
+                        <img src="Banner 01.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <button onclick="lihatDetail('Produk 5')" style="background-color: #f3d278; color: #0a2463; border: none; padding: 8px 20px; border-radius: 20px; font-weight: bold; cursor: pointer;">Lihat Detail</button>
                 </div>
 
-                <!-- KOTAK 6 -->
-                <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white;">
-                    <img src="Banner 02.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                <!-- ITEM 6 -->
+                <div style="text-align: center;">
+                    <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white; margin-bottom: 12px;">
+                        <img src="Banner 02.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <button onclick="lihatDetail('Produk 6')" style="background-color: #f3d278; color: #0a2463; border: none; padding: 8px 20px; border-radius: 20px; font-weight: bold; cursor: pointer;">Lihat Detail</button>
                 </div>
 
-                <!-- KOTAK 7 -->
-                <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white;">
-                    <img src="Spanduk nama stand.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                <!-- ITEM 7 -->
+                <div style="text-align: center;">
+                    <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white; margin-bottom: 12px;">
+                        <img src="Spanduk nama stand.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <button onclick="lihatDetail('Produk 7')" style="background-color: #f3d278; color: #0a2463; border: none; padding: 8px 20px; border-radius: 20px; font-weight: bold; cursor: pointer;">Lihat Detail</button>
                 </div>
 
-                <!-- KOTAK 8 -->
-                <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white;">
-                    <video src="Cetak Majalah 01.mp4" controls style="width: 100%; height: 100%; object-fit: cover;"></video>
+                <!-- ITEM 8 -->
+                <div style="text-align: center;">
+                    <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white; margin-bottom: 12px;">
+                        <video src="Cetak Majalah 01.mp4" controls style="width: 100%; height: 100%; object-fit: cover;"></video>
+                    </div>
+                    <button onclick="lihatDetail('Produk 8')" style="background-color: #f3d278; color: #0a2463; border: none; padding: 8px 20px; border-radius: 20px; font-weight: bold; cursor: pointer;">Lihat Detail</button>
                 </div>
 
-                <!-- KOTAK 9 -->
-                <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white;">
-                    <video src="Cetak Majalah 02.mp4" controls style="width: 100%; height: 100%; object-fit: cover;"></video>
+                <!-- ITEM 9 -->
+                <div style="text-align: center;">
+                    <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white; margin-bottom: 12px;">
+                        <video src="Cetak Majalah 02.mp4" controls style="width: 100%; height: 100%; object-fit: cover;"></video>
+                    </div>
+                    <button onclick="lihatDetail('Produk 9')" style="background-color: #f3d278; color: #0a2463; border: none; padding: 8px 20px; border-radius: 20px; font-weight: bold; cursor: pointer;">Lihat Detail</button>
                 </div>
 
-                <!-- KOTAK 10 -->
-                <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white;">
-                    <video src="Model Stand Pameran.mp4" controls style="width: 100%; height: 100%; object-fit: cover;"></video>
+                <!-- ITEM 10 -->
+                <div style="text-align: center;">
+                    <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white; margin-bottom: 12px;">
+                        <video src="Model Stand Pameran.mp4" controls style="width: 100%; height: 100%; object-fit: cover;"></video>
+                    </div>
+                    <button onclick="lihatDetail('Produk 10')" style="background-color: #f3d278; color: #0a2463; border: none; padding: 8px 20px; border-radius: 20px; font-weight: bold; cursor: pointer;">Lihat Detail</button>
                 </div>
 
             </div>
         </div>
 
-        <!-- FOOTER HAK CIPTA -->
+        <!-- FOOTER -->
         <div class="py-6 text-center" style="color: #f3d278; margin-top: 10px;">
             <p style="font-size: 1.1rem; margin: 0 0 8px 0;">Copyright © 2026 AW Solutions</p>
             <p style="font-size: 1.1rem; margin: 0;">Jasa Tugas Diklat PKN, PKA, PKP</p>
         </div>
 
     </div>
+
+    <!-- SCRIPT UNTUK TOMBOL -->
+    <script>
+        function lihatDetail(namaProduk) {
+            alert('Anda memilih untuk melihat detail ' + namaProduk);
+            // Nanti disini bisa ditambahkan link atau popup untuk melihat gambar besar
+        }
+    </script>
 
 </body>
 </html>
