@@ -29,7 +29,7 @@
             --warna-emas: #F5D061;
         }
 
-        /* NAVBAR - DIATUR AGAR TIDAK TERPOTONG */
+        /* NAVBAR - UKURAN FONT DIATUR AGAR SEMUA MUAT */
         .navbar {
             background-color: var(--warna-biru);
             padding: 12px 5px;
@@ -44,8 +44,8 @@
         .navbar a {
             color: white;
             text-decoration: none;
-            margin: 0 6px;
-            font-size: 0.9rem; /* UKURAN KECIL AGAR SEMUA MUAT */
+            margin: 0 8px;
+            font-size: 0.95rem;
             font-weight: 500;
             padding-bottom: 5px;
             border-bottom: 3px solid transparent;
@@ -101,6 +101,18 @@
             margin-bottom: 15px;
         }
 
+        /* BAGIAN ISI PKN PKA PKP - DIATUR AGAR TIDAK PECAH */
+        .list-layanan {
+            color: white;
+            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+            max-width: 90%;
+            line-height: 1.8;
+            margin-bottom: 0;
+            /* AGAR TULISAN TIDAK PECAH DI LANDSCAPE */
+            display: inline-block;
+            text-align: center;
+        }
+
         .bottom-section {
             margin-top: auto;
             width: 100%;
@@ -110,12 +122,12 @@
             padding-bottom: 0px;
         }
 
-        /* HAK CIPTA DITURUNKAN PALING BAWAH */
+        /* HAK CIPTA DITURUNKAN */
         .copyright {
             color: white;
             font-size: 0.8rem;
             margin-top: 40px;
-            margin-bottom: 50px; /* DITAMBAH AGAR TURUN JAUH */
+            margin-bottom: 40px;
             opacity: 0.8;
         }
     </style>
@@ -140,7 +152,8 @@
                     Jasa Tugas Diklat
                 </h1>
 
-                <p style="color: white; font-size: clamp(0.9rem, 2.5vw, 1.2rem); max-width: 90%; line-height: 1.8; margin-bottom: 0;">
+                <!-- LIST LAYANAN SUDAH DIATUR AGAR RAPI -->
+                <div class="list-layanan">
                     <i class="fas fa-th-large" style="color: var(--warna-emas); margin-right: 8px;"></i>
                     PKN Pelatihan Kepemimpinan Nasional, TK. II dan TK. I
                     <br>
@@ -149,7 +162,7 @@
                     <br>
                     <i class="fas fa-certificate" style="color: var(--warna-emas); margin-right: 8px;"></i>
                     PKP Pelatihan Kepemimpinan Pengawas
-                </p>
+                </div>
             </div>
 
             <div class="bottom-section">
