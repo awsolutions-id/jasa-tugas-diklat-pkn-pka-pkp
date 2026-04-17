@@ -26,7 +26,7 @@
 
         :root {
             --warna-biru: #002B5B;
-            --warna-emas: #F5D061;
+            --warna-emas: #FFD700;
         }
 
         /* NAVBAR */
@@ -57,6 +57,7 @@
             border-bottom: 3px solid white;
         }
 
+        /* BACKGROUND - TANPA LAPISAN BIRU */
         .hero-section {
             background-image: url('Latar Mengetik 01.jpg');
             background-size: cover;
@@ -67,18 +68,6 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: null;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--warna-biru);
-            opacity: 0.75;
-            z-index: 1;
         }
 
         .content-wrapper {
@@ -94,23 +83,33 @@
             width: 100%;
         }
 
+        /* LOGO WARNA EMAS */
         .logo-small {
-            color: white;
+            color: var(--warna-emas);
             font-size: 0.9rem;
             font-weight: bold;
             margin-bottom: 15px;
         }
 
-        /* BAGIAN ISI - DIATUR AGAR TIDAK PECAH */
+        /* JUDUL WARNA BIRU */
+        .judul-utama {
+            color: var(--warna-biru);
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 25px;
+            white-space: nowrap;
+        }
+
+        /* BAGIAN ISI */
         .item-layanan {
             color: white;
             font-size: clamp(0.9rem, 2.5vw, 1.2rem);
             line-height: 1.8;
             margin-bottom: 10px;
-            /* AGAR TULISAN TETAP RAPI DAN TIDAK LONCAT */
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
         .bottom-section {
@@ -126,8 +125,9 @@
             color: white;
             font-size: 0.8rem;
             margin-top: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             opacity: 0.8;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
     </style>
 </head>
@@ -147,11 +147,10 @@
             <div class="top-content">
                 <div class="logo-small">AW Solutions</div>
 
-                <h1 style="color: white; font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 700; margin-bottom: 25px; white-space: nowrap;">
+                <h1 class="judul-utama">
                     Jasa Tugas Diklat
                 </h1>
 
-                <!-- STRUKTUR DIPERBAIKI -->
                 <div class="item-layanan">
                     <i class="fas fa-th-large" style="color: var(--warna-emas); margin-right: 8px;"></i>
                     PKN Pelatihan Kepemimpinan Nasional, TK. II dan TK. I
@@ -167,7 +166,7 @@
             </div>
 
             <div class="bottom-section">
-                <p style="color: white; font-size: 0.85rem; margin-bottom: 20px; line-height: 1.5;">
+                <p style="color: white; font-size: 0.85rem; margin-bottom: 20px; line-height: 1.5; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
                     Solusi Pengetikan Desain dan Cetak untuk Kebutuhan Tugas Diklat Anda
                 </p>
 
