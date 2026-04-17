@@ -6,6 +6,10 @@
     <title>Beranda - AW Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- IMPORT FONT ELEGAN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -15,7 +19,7 @@
         }
 
         html, body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', Arial, sans-serif; /* FONT BARU LEBIH ELEGAN */
             overflow-x: hidden;
             width: 100%;
             height: 100%;
@@ -27,18 +31,28 @@
             --warna-emas: #F5D061;
         }
 
-        /* HEADER DENGAN LOGO */
-        .header-top {
+        /* NAVBAR */
+        .navbar {
             background-color: var(--warna-biru);
-            padding: 8px 20px;
-            text-align: left;
+            padding: 15px 0;
+            position: relative;
+            z-index: 3;
             width: 100%;
         }
 
-        .logo-small {
+        .navbar a {
             color: white;
-            font-size: 0.9rem; /* UKURAN KECIL SEKALI */
-            font-weight: bold;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding-bottom: 5px;
+            border-bottom: 3px solid transparent;
+            transition: 0.3s;
+        }
+
+        .navbar a.active {
+            border-bottom: 3px solid white;
         }
 
         /* BACKGROUND DENGAN LAPISAN BIRU TUA MERATA */
@@ -80,38 +94,16 @@
             width: 100%;
         }
 
-        /* NAVBAR */
-        .navbar {
-            background-color: var(--warna-biru);
-            padding: 12px 0;
-            position: relative;
-            z-index: 3;
-            width: 100%;
-        }
-
-        .navbar a {
+        /* LOGO KECIL DI ATAS JUDUL */
+        .logo-small {
             color: white;
-            text-decoration: none;
-            margin: 0 12px;
-            font-size: 1.2rem;
-            font-weight: 500;
-            padding-bottom: 5px;
-            border-bottom: 3px solid transparent;
-            transition: 0.3s;
-        }
-
-        /* HANYA YANG AKTIF YANG ADA GARIS */
-        .navbar a.active {
-            border-bottom: 3px solid white;
+            font-size: 0.9rem; /* UKURAN KECIL SEKALI */
+            font-weight: bold;
+            margin-bottom: 15px;
         }
     </style>
 </head>
 <body>
-
-    <!-- HEADER DENGAN LOGO KECIL -->
-    <div class="header-top">
-        <div class="logo-small">AW Solutions</div>
-    </div>
 
     <!-- NAVBAR MENU -->
     <div class="navbar flex justify-center">
@@ -126,10 +118,13 @@
     <div class="hero-section">
         <div class="content-wrapper">
             
+            <!-- LOGO KECIL SESUAI ARAH PANAH -->
+            <div class="logo-small">AW Solutions</div>
+
             <p style="color: white; font-size: 1.2rem; margin-bottom: 10px;">pengetikan desain dan cetak</p>
 
-            <!-- JUDUL DIJADIKAN 1 BARIS -->
-            <h1 style="color: white; font-size: clamp(2.5rem, 8vw, 4rem); font-weight: bold; margin-bottom: 20px; white-space: nowrap;">
+            <!-- JUDUL DIKECILKAN DAN FONT ELEGAN -->
+            <h1 style="color: white; font-size: clamp(2rem, 6vw, 3rem); font-weight: 700; margin-bottom: 20px; white-space: nowrap;">
                 Jasa Tugas Diklat
             </h1>
 
@@ -150,12 +145,15 @@
                 "Solusi Lengkap untuk Kebutuhan Tugas Diklat Anda"
             </p>
 
-            <!-- TOMBOL SUDAH DILINKKE KE HALAMAN LAYANAN -->
+            <!-- TOMBOL DIKECILKAN SEDIKIT -->
             <a href="layanan.html" style="text-decoration: none;">
-                <button style="background-color: white; color: var(--warna-biru); padding: 15px 30px; font-size: 1.5rem; font-weight: bold; border: none; border-radius: 8px; cursor: pointer;">
+                <button style="background-color: white; color: var(--warna-biru); padding: 12px 25px; font-size: 1.3rem; font-weight: bold; border: none; border-radius: 8px; cursor: pointer;">
                     Mulai Sekarang
                 </button>
             </a>
+
+            <!-- RUANG KOSONG UNTUK HAK CIPTA NANTI -->
+            <div style="margin-top: 50px; height: 30px; width: 100%;"></div>
 
         </div>
     </div>
