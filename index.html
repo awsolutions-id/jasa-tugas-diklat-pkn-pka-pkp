@@ -179,7 +179,7 @@
             color: #999;
             text-align: left;
         }
-        /* NAVBAR STYLE BARU SESUAI PERMINTAAN */
+        /* NAVBAR STYLE DENGAN GARIS KUNING DI BAWAH */
         .navbar {
             background-color: #002B5B;
             padding: 12px 20px;
@@ -191,6 +191,7 @@
             align-items: center;
             box-sizing: border-box;
             height: 65px;
+            border-bottom: 3px solid #FFD700; /* Garis kuning di bawah navbar */
         }
         /* LOGO DI POJOK KIRI */
         .logo {
@@ -201,29 +202,26 @@
         }
         /* ICON 3 GARIS DI POJOK KANAN */
         .menu-toggle {
-            color: white;
+            color: #FFD700; /* Warna ikon garis jadi kuning sesuai gambar */
             font-size: 1.8rem;
             cursor: pointer;
             transition: 0.3s;
         }
         .menu-toggle:hover {
-            color: #FFD700;
+            color: white;
         }
-        /* MENU SAMPING YANG MUNCUL SAAT DI KLIK */
+        /* MENU SAMPING YANG LANGSUNG AKTIF SAAT HALAMAN DIBUKA */
         .sidebar-menu {
             position: fixed;
-            top: 65px;
-            right: -280px;
+            top: 68px; /* Disesuaikan karena ada garis kuning 3px */
+            right: 0; /* Langsung aktif, posisi di sisi kanan */
             width: 280px;
-            height: calc(100vh - 65px);
+            height: calc(100vh - 68px);
             background-color: #002B5B;
             z-index: 998;
             transition: right 0.3s ease;
             padding-top: 20px;
             box-shadow: -2px 0 10px rgba(0,0,0,0.2);
-        }
-        .sidebar-menu.active {
-            right: 0;
         }
         .sidebar-menu a {
             display: block;
@@ -246,14 +244,14 @@
             background-position: center;
             background-repeat: no-repeat;
             position: relative;
-            min-height: calc(100vh - 65px);
+            min-height: calc(100vh - 68px);
             width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
             padding: 15px;
-            padding-top: 10px; /* Jarak atas dikurangi agar konten naik */
+            padding-top: 10px;
             box-sizing: border-box;
         }
         .hero-overlay {
@@ -271,9 +269,9 @@
             text-align: center;
             width: 100%;
             max-width: 600px;
-            margin-top: 10px; /* Konten dinaikkan */
+            margin-top: -30px; /* Dinaikkan lebih tinggi */
         }
-        /* TULISAN JASA TUGAS DIKLAT - LEBIH BESAR DAN NAIK */
+        /* TULISAN JASA TUGAS DIKLAT - LEBIH BESAR DAN NAIK LEBIH TINGGI */
         .judul-utama {
             color: #000000;
             font-size: clamp(2.2rem, 7vw, 3.5rem);
@@ -282,7 +280,7 @@
             text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.9), 
                          1px 1px 3px rgba(255, 255, 255, 0.7);
         }
-        /* TULISAN ITEM LAYANAN - WARNA PUTIH, POSISI NAIK */
+        /* TULISAN ITEM LAYANAN - WARNA PUTIH, POSISI NAIK LEBIH TINGGI */
         .item-layanan {
             color: #ffffff;
             font-size: clamp(1.1rem, 3.5vw, 1.5rem);
@@ -306,17 +304,17 @@
             flex-shrink: 0;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
         }
-        /* TULISAN DESKRIPSI - WARNA PUTIH */
+        /* TULISAN DESKRIPSI - DIPERKECIL UKURANNYA DAN DITURUNKAN POSISINYA */
         .deskripsi {
             color: #ffffff;
-            font-size: clamp(0.95rem, 2.5vw, 1.2rem);
-            margin: 20px auto;
+            font-size: clamp(0.8rem, 2vw, 1rem); /* Ukuran diperkecil */
+            margin: 50px auto 20px auto; /* Margin atas diperbesar agar turun */
             line-height: 1.6;
             max-width: 550px;
             text-align: center;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
         }
-        /* TOMBOL MULAI SEKARANG - POSISI NAIK DEKAT DESKRIPSI */
+        /* TOMBOL MULAI SEKARANG - DITURUNKAN POSISINYA */
         .tombol-mulai {
             background-color: white;
             color: #000000;
@@ -330,11 +328,11 @@
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
             margin-top: 8px;
         }
-        /* COPYRIGHT - DINAINKAN SEDIKIT LAGI */
+        /* COPYRIGHT - DITURUNKAN POSISINYA */
         .copyright {
             color: #ffffff;
             font-size: 0.95rem;
-            margin-top: 15px;
+            margin-top: 35px; /* Margin atas diperbesar agar turun */
             opacity: 0.95;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
@@ -353,7 +351,7 @@
     </div>
 
     <!-- ============================================== -->
-    <!-- MENU SAMPING YANG MUNCUL SAAT ICON DIKLIK -->
+    <!-- MENU SAMPING YANG LANGSUNG AKTIF -->
     <!-- ============================================== -->
     <div class="sidebar-menu" id="sidebarMenu">
         <a href="#beranda" onclick="showPage('beranda'); toggleMenu()" class="active">Beranda</a>
@@ -366,7 +364,8 @@
     <!-- ============================================== -->
     <!-- HALAMAN BERANDA -->
     <!-- ============================================== -->
-    <section id="beranda" class="page-content active">
+    <section id="
+beranda" class="page-content active">
         <div class="hero-section">
             <div class="hero-overlay"></div>
             <div class="content-wrapper">
@@ -382,7 +381,7 @@
                 </div>
                 <div class="item-layanan">
                     <i class="fas fa-sun-o"></i>
-                    <span>PKP Pelatihan Kepem impinan Pengawas</span>
+                    <span>PKP Pelatihan Kepemimpinan Pengawas</span>
                 </div>
 
                 <p class="deskripsi">Solusi Pengetikan Desain dan Cetak untuk Kebutuhan Tugas Diklat Anda</p>
@@ -395,10 +394,10 @@
             </div>
         </div>
     </section>
+    
 
 
     
-
     <!-- ============================================== -->
     <!-- HALAMAN PROFIL -->
     <!-- ============================================== -->
