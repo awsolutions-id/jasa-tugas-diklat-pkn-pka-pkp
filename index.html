@@ -840,6 +840,7 @@
         <div id="kontenModal" class="modal-content"></div>
     </div
 
+        
     <!-- ============================================== -->
     <!-- JAVASCRIPT / FUNGSI -->
     <!-- ============================================== -->
@@ -890,9 +891,9 @@
             
             modal.style.display = "block";
             if(tipe == 'gambar') {
-                kontenModal.innerHTML = '<img src="' + namaFile + '" style="max-width:100%; max-height:100%;">';
+                kontenModal.innerHTML = '<img src="' + namaFile + '" style="max-width:100%; max-height:100%; border-radius: 8px;">';
             } else if(tipe == 'video') {
-                kontenModal.innerHTML = '<video src="' + namaFile + '" controls style="max-width:100%; max-height:100%;">';
+                kontenModal.innerHTML = '<video src="' + namaFile + '" controls style="max-width:100%; max-height:100%; border-radius: 8px;">';
             }
         }
 
@@ -918,7 +919,7 @@
     </script>
 
     <!-- ============================================== -->
-    <!-- STYLE TAMPILAN - SUDAH DIPERKECIL UKURANNYA -->
+    <!-- STYLE TAMPILAN - SEMUA REVISIAN SUDAH SESUAI -->
     <!-- ============================================== -->
     <style>
         /* Navbar (Logo dan Menu) Tetap di Atas */
@@ -963,7 +964,7 @@
             color: white;
         }
 
-        /* MENU SAMPING */
+        /* MENU SAMPING - TANDA SILANG DIHILANGKAN */
         .sidebar-menu {
             position: fixed;
             top: 68px;
@@ -982,17 +983,9 @@
         .sidebar-menu.active {
             right: 0;
         }
-        .close-menu {
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            color: #FFD700;
-            font-size: 1.4rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .close-menu:hover {
-            color: white;
+        /* HAPUS TANDA SILANG DI MENU SAMPING */
+        .sidebar-menu .close-menu {
+            display: none !important;
         }
         .sidebar-menu a {
             display: block;
@@ -1010,7 +1003,7 @@
         }
 
         /* ============================================== */
-        /* ✅ STYLE BERANDA - SUDAH DIPERKECIL DAN SEIMBANG */
+        /* ✅ STYLE HALAMAN BERANDA - SESUAI UKURAN */
         /* ============================================== */
         .hero-section {
             background-image: url('Latar Mengetik 01.jpg');
@@ -1046,20 +1039,20 @@
             padding-top: 10px;
         }
 
-        /* JUDUL UTAMA - DIPERKECIL LAGI */
+        /* JUDUL UTAMA */
         .judul-utama {
             color: #000000;
-            font-size: clamp(1.5rem, 5vw, 2.2rem); /* Ukuran sudah diperkecil lagi */
+            font-size: clamp(1.5rem, 5vw, 2.2rem);
             font-weight: 900;
             margin-bottom: 25px;
             text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.9), 
                          1px 1px 3px rgba(255, 255, 255, 0.7);
         }
 
-        /* TULISAN PKN/PKA/PKP - DIPERKECIL LAGI SUPAYA SEIMBANG */
+        /* TULISAN PKN/PKA/PKP */
         .item-layanan {
             color: #ffffff;
-            font-size: clamp(1rem, 3vw, 1.3rem); /* Diperkecil lagi */
+            font-size: clamp(1rem, 3vw, 1.3rem);
             line-height: 1.6;
             margin-bottom: 12px;
             display: flex;
@@ -1074,7 +1067,7 @@
 
         .item-layanan i {
             color: #FFD700;
-            font-size: 1.2rem; /* Ikon juga disesuaikan ukurannya */
+            font-size: 1.2rem;
             margin-right: 8px;
             width: 30px;
             text-align: center;
@@ -1082,7 +1075,6 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
         }
 
-        /* TULISAN DI BAWAH TETAP */
         .deskripsi {
             color: #ffffff;
             font-size: clamp(0.9rem, 2.2vw, 1.1rem);
@@ -1114,10 +1106,85 @@
             opacity: 0.95;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
+
+        /* ============================================== */
+        /* ✅ STYLE HALAMAN PROFIL & LAYANAN - LATAR PUTIH */
+        /* ============================================== */
+        .profil-section, .layanan-section {
+            background-color: #ffffff !important;
+            min-height: calc(100vh - 65px);
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* ============================================== */
+        /* ✅ STYLE SEMUA POP UP - LATAR PUTIH + TOMBOL TUTUP KUNING BIRU */
+        /* ============================================== */
+        /* Modal umum */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Konten pop-up - latar putih */
+        .modal-content {
+            background-color: #ffffff !important;
+            margin: auto;
+            padding: 25px;
+            border: none;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 12px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            color: #000000;
+        }
+
+        /* Tombol tutup pop-up - lingkaran kuning + tanda silang biru */
+        .close-modal-btn {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            width: 35px;
+            height: 35px;
+            background-color: #FFD700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #002B5B;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 10001;
+        }
+
+        .close-modal-btn:hover {
+            background-color: #e6c200;
+            transform: scale(1.1);
+        }
     </style>
 
 </body>
 </html>
+
+
+     
+     
+            
+            
+            
 
 
 
