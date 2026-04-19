@@ -179,33 +179,65 @@
             color: #999;
             text-align: left;
         }
-        /* NAVBAR STYLE SESUAI PERMINTAAN */
+        /* NAVBAR STYLE BARU SESUAI PERMINTAAN */
         .navbar {
             background-color: #002B5B;
-            padding: 12px 5px;
+            padding: 12px 20px;
             position: relative;
-            z-index: 3;
+            z-index: 999;
             width: 100%;
             display: flex;
-            justify-content: space-around;
-            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
             box-sizing: border-box;
+            height: 65px;
         }
-        .navbar a {
+        /* LOGO DI POJOK KIRI */
+        .logo {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        /* ICON 3 GARIS DI POJOK KANAN */
+        .menu-toggle {
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .menu-toggle:hover {
+            color: #FFD700;
+        }
+        /* MENU SAMPING YANG MUNCUL SAAT DI KLIK */
+        .sidebar-menu {
+            position: fixed;
+            top: 65px;
+            right: -280px;
+            width: 280px;
+            height: calc(100vh - 65px);
+            background-color: #002B5B;
+            z-index: 998;
+            transition: right 0.3s ease;
+            padding-top: 20px;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+        }
+        .sidebar-menu.active {
+            right: 0;
+        }
+        .sidebar-menu a {
+            display: block;
             color: white;
             text-decoration: none;
-            margin: 0 5px;
-            font-size: 1rem;
-            font-weight: 500;
-            padding-bottom: 5px;
-            border-bottom: 3px solid transparent;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             transition: 0.3s;
-            white-space: nowrap;
-            text-align: center;
         }
-        .navbar a.active {
+        .sidebar-menu a:hover, .sidebar-menu a.active {
+            background-color: #1a3b7a;
             color: #FFD700;
-            border-bottom: 3px solid #FFD700;
+            padding-left: 35px;
         }
         /* STYLE TAMBAHAN UNTUK BERANDA */
         .hero-section {
@@ -214,14 +246,14 @@
             background-position: center;
             background-repeat: no-repeat;
             position: relative;
-            min-height: calc(100vh - 55px);
+            min-height: calc(100vh - 65px);
             width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            padding: 20px;
-            padding-top: 20px; /* Jarak dari atas dikurangi agar konten dekat menu */
+            padding: 15px;
+            padding-top: 10px; /* Jarak atas dikurangi agar konten naik */
             box-sizing: border-box;
         }
         .hero-overlay {
@@ -238,102 +270,106 @@
             z-index: 2;
             text-align: center;
             width: 100%;
+            max-width: 600px;
+            margin-top: 10px; /* Konten dinaikkan */
         }
-        /* TULISAN AW SOLUTIONS - WARNA KUNING */
-        .logo-small {
-            color: #FFD700;
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        /* TULISAN JASA TUGAS DIKLAT - WARNA BIRU DENGAN SHADOW PUTIH */
+        /* TULISAN JASA TUGAS DIKLAT - LEBIH BESAR DAN NAIK */
         .judul-utama {
-            color: #002B5B;
-            font-size: clamp(2rem, 6vw, 3rem);
+            color: #000000;
+            font-size: clamp(2.2rem, 7vw, 3.5rem);
             font-weight: 900;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9), 
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.9), 
                          1px 1px 3px rgba(255, 255, 255, 0.7);
         }
         /* TULISAN ITEM LAYANAN - WARNA PUTIH, POSISI NAIK */
         .item-layanan {
             color: #ffffff;
-            font-size: clamp(1rem, 3vw, 1.3rem);
-            line-height: 1.6;
-            margin-bottom: 8px;
+            font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+            line-height: 1.8;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            max-width: 500px;
+            max-width: 550px;
             margin-left: auto;
             margin-right: auto;
             text-align: left;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
         }
         .item-layanan i {
             color: #FFD700;
-            font-size: 1.5rem;
-            margin-right: 15px;
-            width: 30px;
+            font-size: 1.8rem;
+            margin-right: 18px;
+            width: 35px;
             text-align: center;
             flex-shrink: 0;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
         }
         /* TULISAN DESKRIPSI - WARNA PUTIH */
         .deskripsi {
             color: #ffffff;
-            font-size: clamp(0.85rem, 2vw, 1rem);
-            margin: 15px auto;
-            line-height: 1.5;
-            max-width: 500px;
+            font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+            margin: 20px auto;
+            line-height: 1.6;
+            max-width: 550px;
             text-align: center;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
         }
         /* TOMBOL MULAI SEKARANG - POSISI NAIK DEKAT DESKRIPSI */
         .tombol-mulai {
             background-color: white;
             color: #000000;
-            padding: 12px 35px;
-            font-size: 1.1rem;
+            padding: 14px 40px;
+            font-size: 1.2rem;
             font-weight: bold;
             border: none;
-            border-radius: 12px;
+            border-radius: 15px;
             cursor: pointer;
             white-space: nowrap;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-            margin-top: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+            margin-top: 8px;
         }
         /* COPYRIGHT - DINAINKAN SEDIKIT LAGI */
         .copyright {
             color: #ffffff;
-            font-size: 0.9rem;
-            margin-top: 12px; /* Jarak atas dikurangi lagi agar naik */
+            font-size: 0.95rem;
+            margin-top: 15px;
             opacity: 0.95;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
     </style>
 </head>
 <body class="bg-white font-sans">
 
     <!-- ============================================== -->
-    <!-- NAVBAR MENU -->
+    <!-- NAVBAR DENGAN LOGO DAN ICON 3 GARIS -->
     <!-- ============================================== -->
     <div class="navbar">
-        <a href="#beranda" onclick="showPage('beranda')" class="active">Beranda</a>
-        <a href="#profil" onclick="showPage('profil')">Profil</a>
-        <a href="#layanan" onclick="showPage('layanan')">Layanan</a>
-        <a href="#portofolio" onclick="showPage('portofolio')">Portofolio</a>
-        <a href="#kontak" onclick="showPage('kontak')">Kontak</a>
+        <a href="#beranda" onclick="showPage('beranda'); toggleMenu()" class="logo">AW Solutions</a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
     </div>
-        <!-- ============================================== -->
+
+    <!-- ============================================== -->
+    <!-- MENU SAMPING YANG MUNCUL SAAT ICON DIKLIK -->
+    <!-- ============================================== -->
+    <div class="sidebar-menu" id="sidebarMenu">
+        <a href="#beranda" onclick="showPage('beranda'); toggleMenu()" class="active">Beranda</a>
+        <a href="#profil" onclick="showPage('profil'); toggleMenu()">Profil</a>
+        <a href="#layanan" onclick="showPage('layanan'); toggleMenu()">Layanan</a>
+        <a href="#portofolio" onclick="showPage('portofolio'); toggleMenu()">Portofolio</a>
+        <a href="#kontak" onclick="showPage('kontak'); toggleMenu()">Kontak</a>
+    </div>
+
+    <!-- ============================================== -->
     <!-- HALAMAN BERANDA -->
     <!-- ============================================== -->
     <section id="beranda" class="page-content active">
         <div class="hero-section">
             <div class="hero-overlay"></div>
             <div class="content-wrapper">
-                <div class="logo-small">AW Solutions</div>
                 <h1 class="judul-utama">Jasa Tugas Diklat</h1>
 
                 <div class="item-layanan">
@@ -346,7 +382,7 @@
                 </div>
                 <div class="item-layanan">
                     <i class="fas fa-sun-o"></i>
-                    <span>PKP Pelatihan Kepemimpinan Pengawas</span>
+                    <span>PKP Pelatihan Kepem impinan Pengawas</span>
                 </div>
 
                 <p class="deskripsi">Solusi Pengetikan Desain dan Cetak untuk Kebutuhan Tugas Diklat Anda</p>
@@ -359,7 +395,10 @@
             </div>
         </div>
     </section>
+
+
     
+
     <!-- ============================================== -->
     <!-- HALAMAN PROFIL -->
     <!-- ============================================== -->
