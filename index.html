@@ -3,140 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Furnitur</title>
+    <title>Portofolio - Revisi</title>
     <style>
-        /* Gaya dasar untuk seluruh halaman */
+        /* Reset CSS dasar */
         body {
-            font-family: sans-serif; /* Menggunakan font sans-serif agar mirip contoh */
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9; /* Warna latar belakang abu-abu sangat muda */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Memastikan footer tetap di bawah */
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
         }
 
-        /* Container untuk menampung konten portofolio */
+        /* Container utama */
         .container {
-            max-width: 800px; /* Batasi lebar container agar rapi di layar besar */
-            margin: 0 auto; /* Tengah-tengah halaman secara horizontal */
-            padding: 20px;
-            box-sizing: border-box; /* Padding tidak mempengaruhi lebar elemen */
+            max-width: 480px; /* Lebar HP */
+            margin: 0 auto;
+            background-color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header "Portofolio" atas */
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+            color: #0d47a1; /* Biru tua */
+        }
+
+        /* Grid untuk kotak foto */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 10px;
             flex-grow: 1; /* Biar footer selalu di bawah */
         }
 
-        /* Judul halaman "Portofolio" */
-        .title {
-            text-align: center;
-            color: #1a4f8b; /* Warna biru tua sesuai contoh */
-            margin-bottom: 30px;
-            font-size: 32px; /* Ukuran teks judul */
-            font-weight: bold;
-        }
-
-        /* Grid untuk menampung kotak-kotak portofolio */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 kolom sama rata */
-            gap: 15px; /* Jarak antar kotak */
-        }
-
-        /* Gaya untuk setiap kotak portofolio (persegi simetris) */
-        .card {
-            background-color: #fff;
-            border: 2px solid #ffcc00; /* Garis kuning sesuai contoh */
-            border-radius: 4px; /* Membuat sudut kotak sedikit melengkung */
-            box-sizing: border-box; /* Padding tidak mempengaruhi lebar elemen */
+        /* Gaya untuk setiap kotak portofolio */
+        .portfolio-item {
+            border: 2px solid #ffcc00; /* Bingkai kuning */
+            border-radius: 4px;
             display: flex;
-            flex-direction: column; /* Konten di dalam disusun vertikal */
-            align-items: center; /* Konten diatur rata tengah secara horizontal */
-            padding: 10px;
-            
-            /* KUNCI UNTUK MEMBUAT KOTAK MENJADI PERSEGI SIMETRIS */
-            aspect-ratio: 1 / 1; /* Lebar sama dengan tinggi */
+            flex-direction: column;
+            overflow: hidden;
+            /* REVISI: Rasio aspek diubah menjadi lebih pendek (persegi panjang horizontal) */
+            aspect-ratio: 4 / 3; /* Lebar : Tinggi, lebih pendek dari sebelumnya */
         }
 
-        /* Placeholder untuk gambar (kotak abu-abu di dalam) */
+        /* Placeholder untuk gambar (kotak abu-abu) */
         .image-placeholder {
-            width: 100%; /* Lebar memenuhi kotak */
-            height: auto;
-            background-color: #e0e0e0; /* Warna abu-abu placeholder */
-            margin-bottom: auto; /* Jarak ke elemen di bawahnya */
-            border-radius: 2px;
-            
-            /* Menjaga bentuk persegi placeholder di dalam */
-            aspect-ratio: 1 / 1;
+            background-color: #ddd;
+            flex-grow: 1; /* Mengisi sisa ruang kotak bingkai */
         }
 
-        /* Tombol 'Lihat Detail' (kotak kuning) */
+        /* Tombol 'Lihat Detail' di bawah foto */
         .detail-button {
-            background-color: #ffcc00; /* Warna kuning sesuai contoh */
-            color: #333; /* Warna teks hitam/abu-abu tua */
-            border: none;
-            padding: 8px; /* Padding tombol */
-            border-radius: 4px; /* Membuat sudut tombol sedikit melengkung */
-            cursor: pointer;
-            display: flex;
-            align-items: center; /* Ikon dan teks diatur rata tengah secara vertikal */
-            justify-content: center; /* Ikon dan teks diatur rata tengah secara horizontal */
-            gap: 5px; /* Jarak antar ikon dan teks */
-            font-size: 14px; /* Ukuran teks tombol */
+            background-color: #ffcc00; /* Warna kuning */
+            color: #333;
+            text-align: center;
+            padding: 8px;
+            font-size: 14px;
             font-weight: bold;
-            text-decoration: none; /* Menghapus garis bawah pada link */
-            width: 100%; /* Tombol memenuhi lebar kotak */
-            box-sizing: border-box; /* Padding tidak mempengaruhi lebar elemen */
-            margin-top: 10px; /* Jarak dari placeholder gambar */
+            cursor: pointer;
+            border-top: 1px solid #ffcc00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* Ikon mata sederhana (bisa diganti dengan ikon gambar asli) */
-        .detail-button .eye-icon {
-            font-style: normal;
+        /* Ikon mata sederhana */
+        .eye-icon {
+            margin-right: 5px;
+            font-size: 16px;
         }
 
-        /* Footer halaman (biru) */
+        /* REVISI: Menghapus teks "Portofolio" di bagian bawah */
+        /* (Teks "Portofolio" atas dipertahankan di .header) */
+
+        /* Footer (kotak biru tua) */
         .footer {
-            background-color: #1a4f8b; /* Warna biru tua sesuai contoh */
-            color: #fff; /* Warna teks putih */
-            text-align: center; /* Teks rata tengah */
-            padding: 15px; /* Padding footer */
-            margin-top: auto; /* Memastikan footer selalu berada di bagian paling bawah layar */
+            background-color: #0d47a1; /* Biru tua */
+            color: #ffcc00; /* Teks kuning */
+            text-align: center;
+            padding: 15px 10px;
+            margin-top: auto;
+            border-top: 1px solid #ffcc00;
         }
 
-        /* Responsif: Atur grid untuk layar kecil (HP) */
-        @media (max-width: 600px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr); /* 2 kolom di HP */
-            }
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.4;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="title">Portofolio</h1>
+        <h1 class="header">Portofolio</h1>
 
-        <div class="grid">
-            <div class="card">
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
                 <div class="image-placeholder"></div>
-                <a href="#" class="detail-button">
-                    <span class="eye-icon">👁</span> <span>Lihat Detail</span>
-                </a>
+                <div class="detail-button">
+                    <span class="eye-icon">👁</span>
+                    Lihat Detail
+                </div>
             </div>
-            <div class="card"><div class="image-placeholder"></div><a href="#" class="detail-button"><span class="eye-icon">👁</span><span>Lihat Detail</span></a></div>
-            <div class="card"><div class="image-placeholder"></div><a href="#" class="detail-button"><span class="eye-icon">👁</span><span>Lihat Detail</span></a></div>
-            <div class="card"><div class="image-placeholder"></div><a href="#" class="detail-button"><span class="eye-icon">👁</span><span>Lihat Detail</span></a></div>
-            <div class="card"><div class="image-placeholder"></div><a href="#" class="detail-button"><span class="eye-icon">👁</span><span>Lihat Detail</span></a></div>
-            <div class="card"><div class="image-placeholder"></div><a href="#" class="detail-button"><span class="eye-icon">👁</span><span>Lihat Detail</span></a></div>
-            <div class="card"><div class="image-placeholder"></div><a href="#" class="detail-button"><span class="eye-icon">👁</span><span>Lihat Detail</span></a></div>
-            <div class="card"><div class="image-placeholder"></div><a href="#" class="detail-button"><span class="eye-icon">👁</span><span>Lihat Detail</span></a></div>
-            <div class="card"><div class="image-placeholder"></div><a href="#" class="detail-button"><span class="eye-icon">👁</span><span>Lihat Detail</span></a></div>
-            <div class="card"><div class="image-placeholder"></div><a href="#" class="detail-button"><span class="eye-icon">👁</span><span>Lihat Detail</span></a></div>
-            <div class="card"><div class="image-placeholder"></div><a href="#" class="detail-button"><span class="eye-icon">👁</span><span>Lihat Detail</span></a></div>
-            <div class="card"><div class="image-placeholder"></div><a href="#" class="detail-button"><span class="eye-icon">👁</span><span>Lihat Detail</span></a></div>
+            <div class="portfolio-item">
+                <div class="image-placeholder"></div>
+                <div class="detail-button">
+                    <span class="eye-icon">👁</span>
+                    Lihat Detail
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="image-placeholder"></div>
+                <div class="detail-button">
+                    <span class="eye-icon">👁</span>
+                    Lihat Detail
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="image-placeholder"></div>
+                <div class="detail-button">
+                    <span class="eye-icon">👁</span>
+                    Lihat Detail
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="image-placeholder"></div>
+                <div class="detail-button">
+                    <span class="eye-icon">👁</span>
+                    Lihat Detail
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="image-placeholder"></div>
+                <div class="detail-button">
+                    <span class="eye-icon">👁</span>
+                    Lihat Detail
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="image-placeholder"></div>
+                <div class="detail-button">
+                    <span class="eye-icon">👁</span>
+                    Lihat Detail
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="image-placeholder"></div>
+                <div class="detail-button">
+                    <span class="eye-icon">👁</span>
+                    Lihat Detail
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="image-placeholder"></div>
+                <div class="detail-button">
+                    <span class="eye-icon">👁</span>
+                    Lihat Detail
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="image-placeholder"></div>
+                <div class="detail-button">
+                    <span class="eye-icon">👁</span>
+                    Lihat Detail
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="image-placeholder"></div>
+                <div class="detail-button">
+                    <span class="eye-icon">👁</span>
+                    Lihat Detail
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="image-placeholder"></div>
+                <div class="detail-button">
+                    <span class="eye-icon">👁</span>
+                    Lihat Detail
+                </div>
+            </div>
         </div>
-    </div>
 
-    <footer class="footer">
-        <p>Hak Cipta © 2024 Portofolio Furnitur. Semua Hak Dilindungi.</p>
-    </footer>
+        <footer class="footer">
+            <p>Hak Cipta © 2024 Portofolio Furnitur.<br>Semua Hak Dilindungi.</p>
+        </footer>
+    </div>
 </body>
 </html>
