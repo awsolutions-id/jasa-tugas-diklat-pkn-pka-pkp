@@ -990,7 +990,7 @@ Solusi Pengetikan, Desain dan Cetak Dokumen untuk Kebutuhan Tugas Diklat Anda
         </div>
     </div>
     
-        <!-- JAVASCRIPT -->
+    <!-- JAVASCRIPT -->
     <script>
         function toggleMenu() {
             const sidebar = document.getElementById('sidebarMenu');
@@ -1047,10 +1047,10 @@ Solusi Pengetikan, Desain dan Cetak Dokumen untuk Kebutuhan Tugas Diklat Anda
             modalDiv.style.alignItems = 'center';
             modalDiv.style.zIndex = '99999';
             modalDiv.innerHTML = `
-                <div style="position:relative; max-width:90%; max-height:90%;">
-                    <span onclick="this.parentElement.parentElement.remove()" style="position:absolute; top:-40px; right:0; color:white; font-size:30px; cursor:pointer;">&times;</span>
+                <div style="position:relative; max-width:90%; max-height:90%; background:white; padding:20px; border-radius:10px;">
+                    <span onclick="this.parentElement.parentElement.remove()" style="position:absolute; top:10px; right:10px; width:34px; height:34px; background:#f3d278; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#0a2463; font-size:18px; font-weight:bold; cursor:pointer; box-shadow:0 2px 5px rgba(0,0,0,0.2);">&times;</span>
                     ${content}
-                    <p style="color:white; text-align:center; margin-top:10px;">${caption}</p>
+                    <p style="color:#0a2463; text-align:center; margin-top:15px; font-size:1.1rem; font-weight:600;">${caption}</p>
                 </div>
             `;
             modalDiv.onclick = function() { this.remove(); }
@@ -1059,7 +1059,6 @@ Solusi Pengetikan, Desain dan Cetak Dokumen untuk Kebutuhan Tugas Diklat Anda
     </script>
 </body>
 </html>
-
 
     
         
