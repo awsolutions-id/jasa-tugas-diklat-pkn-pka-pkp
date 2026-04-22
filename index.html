@@ -139,7 +139,7 @@
             }
 
             /* ============================================= */
-            /* MENU SIDEBAR - TULISAN DIUBAH TIDAK TEBAL    */
+            /* MENU SIDEBAR - DIUBAH SESUAI PERMINTAAN       */
             /* ============================================= */
             .sidebar-menu {
                 position: fixed;
@@ -147,7 +147,7 @@
                 left: 0;
                 width: 100vw;
                 height: 100vh;
-                background-color: #f3d278;
+                background-color: #0a2463; /* BACKGROUND BIRU TUA */
                 z-index: 99999;
                 transform: translateX(100%);
                 transition: transform 0.3s ease-in-out;
@@ -160,22 +160,22 @@
             }
             .sidebar-menu a {
                 display: block;
-                color: #0a2463;
+                color: #ffffff; /* TULISAN PUTIH */
                 padding: 15px 20px;
                 text-decoration: none;
                 font-size: 1.2rem;
-                border-bottom: 1px solid rgba(0,0,0,0.1);
-                font-weight: normal; /* DIUBAH JADI TIDAK TEBAL */
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                font-weight: normal;
                 transition: 0.3s;
             }
             .sidebar-menu a:hover {
-                background-color: #0a2463;
-                color: #f3d278;
+                background-color: #f3d278; /* BACKGROUND KUNING */
+                color: #0a2463; /* TULISAN BIRU TUA */
                 padding-left: 30px;
             }
             .sidebar-menu a.active {
-                background-color: #0a2463;
-                color: #f3d278;
+                background-color: #f3d278; /* BACKGROUND KUNING */
+                color: #0a2463; /* TULISAN BIRU TUA */
             }
             /* ============================================= */
 
@@ -216,6 +216,7 @@
             }
         }
     </style>
+    
     <style>
         * {
             margin: 0;
@@ -398,182 +399,183 @@
             padding: 8px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            box-sizing: border-box;
-            margin: auto;
-            cursor: pointer;
-        }
-        .photo-area {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            background-color: #ddd;
-            margin-bottom: 8px;
-            border-radius: 2px;
-            overflow: hidden;
-        }
-        .photo-area img,
-        .photo-area video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .detail-button {
-            background-color: #ffcc00;
-            color: #000;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: bold;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 10px 5px;
-            box-sizing: border-box;
-            cursor: pointer;
-            border: none;
-        }
-        .eye-icon {
-            width: 18px;
-            height: 18px;
-            margin-right: 5px;
-        }
-        .footer-biru {
-            background-color: #0a2463;
-            color: #f3d278;
-            text-align: center;
-            padding: 12px 0;
-            width: 100%;
-            box-sizing: border-box;
-            margin-left: 0;
-            margin-right: 0;
-        }
-        .footer-biru p {
-            margin: 0;
-            font-size: 0.85rem;
-            line-height: 1.5;
-        }
-        .modal-porto {
-            display: none; 
-            position: fixed; 
-            z-index: 1000; 
-            left: 0;
-            top: 0;
-            width: 100%; 
-            height: 100%; 
-            overflow: auto; 
-            background-color: rgba(0,0,0,0.8); 
-            justify-content: center;
-            align-items: center;
-            padding-top: 0;
-        }
-        .modal-content-porto {
-            background-color: #ffffff !important;
-            padding: 25px;
-            border-radius: 10px;
-            position: relative;
-            max-width: 90%;
-            text-align: center;
-            margin: auto;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        .modal-content-porto img,
-        .modal-content-porto video {
-            max-width: 100%;
-            max-height: 70vh;
-            margin-bottom: 15px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .detail-text {
-            color: #0a2463 !important;
-            text-align: center;
-            margin-top: 15px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            background-color: transparent;
-            padding: 10px;
-            border-radius: 5px;
-            max-width: 100%;
-        }
-        .close-porto {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 34px;
-            height: 34px;
-            background-color: #f3d278;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #0a2463;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            z-index: 10;
-        }
-        .close-porto:hover,
-        .close-porto:focus {
-            background-color: #e2c268;
-            text-decoration: none;
-        }
-    </style>
+align-items: center;
+box-sizing: border-box;
+margin: auto;
+cursor: pointer;
+}
+.photo-area {
+width: 100%;
+aspect-ratio: 1 / 1;
+background-color: #ddd;
+margin-bottom: 8px;
+border-radius: 2px;
+overflow: hidden;
+}
+.photo-area img,
+.photo-area video {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.detail-button {
+background-color: #ffcc00;
+color: #000;
+text-decoration: none;
+font-size: 14px;
+font-weight: bold;
+border-radius: 4px;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+padding: 10px 5px;
+box-sizing: border-box;
+cursor: pointer;
+border: none;
+}
+.eye-icon {
+width: 18px;
+height: 18px;
+margin-right: 5px;
+}
+.footer-biru {
+background-color: #0a2463;
+color: #f3d278;
+text-align: center;
+padding: 12px 0;
+width: 100%;
+box-sizing: border-box;
+margin-left: 0;
+margin-right: 0;
+}
+.footer-biru p {
+margin: 0;
+font-size: 0.85rem;
+line-height: 1.5;
+}
+.modal-porto {
+display: none;
+position: fixed;
+z-index: 1000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0,0,0,0.8);
+justify-content: center;
+align-items: center;
+padding-top: 0;
+}
+.modal-content-porto {
+background-color: #ffffff !important;
+padding: 25px;
+border-radius: 10px;
+position: relative;
+max-width: 90%;
+text-align: center;
+margin: auto;
+box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.modal-content-porto img,
+.modal-content-porto video {
+max-width: 100%;
+max-height: 70vh;
+margin-bottom: 15px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+.detail-text {
+color: #0a2463 !important;
+text-align: center;
+margin-top: 15px;
+font-size: 1.1rem;
+font-weight: 600;
+background-color: transparent;
+padding: 10px;
+border-radius: 5px;
+max-width: 100%;
+}
+.close-porto {
+position: absolute;
+top: 10px;
+right: 10px;
+width: 34px;
+height: 34px;
+background-color: #f3d278;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #0a2463;
+font-size: 18px;
+font-weight: bold;
+cursor: pointer;
+transition: 0.3s;
+box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+z-index: 10;
+}
+.close-porto:hover,
+.close-porto:focus {
+background-color: #e2c268;
+text-decoration: none;
+}
+</style>
 </head>
 <body>
-        <!-- HEADER DAN MENU -->
-    <div class="header">
-        <a href="#beranda" class="logo-header">AW Solutions</a>
-        <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-    </div>
 
-    <!-- OVERLAY DAN SIDEBAR MENU -->
-    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
-    <div class="sidebar-menu" id="sidebarMenu">
-        <a href="#beranda" class="nav-link active" data-target="beranda" onclick="gantiHalaman('beranda'); toggleMenu();">Beranda</a>
-        <a href="#profil" class="nav-link" data-target="profil" onclick="gantiHalaman('profil'); toggleMenu();">Profil</a>
-        <a href="#layanan" class="nav-link" data-target="layanan" onclick="gantiHalaman('layanan'); toggleMenu();">Layanan</a>
-        <a href="#portofolio" class="nav-link" data-target="portofolio" onclick="gantiHalaman('portofolio'); toggleMenu();">Portofolio</a>
-        <a href="#kontak" class="nav-link" data-target="kontak" onclick="gantiHalaman('kontak'); toggleMenu();">Kontak</a>
-    </div>
+<!-- HEADER DAN MENU -->
+<div class="header">
+<a href="#beranda" class="logo-header">AW Solutions</a>
+<div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+</div>
 
-    <!-- HALAMAN BERANDA -->
-    <div id="beranda" class="page-content active hero-section">
-        <div class="content-wrapper">
-            <div class="text-center">
-                <h1 class="judul-utama">Jasa Tugas Diklat</h1>
-                
-                <div class="item-layanan">
-                    <i class="fas fa-th-large" style="color: var(--warna-emas); margin-right: 8px;"></i>
-                    PKN Pelatihan Kepemimpinan Nasional, TK. II dan TK. I
-                </div>
-                <div class="item-layanan">
-                    <i class="fas fa-plus-square" style="color: var(--warna-emas); margin-right: 8px;"></i>
-                    PKA Pelatihan Kepemimpinan Administrator
-                </div>
-                <div class="item-layanan">
-                    <i class="fas fa-certificate" style="color: var(--warna-emas); margin-right: 8px;"></i>
-                    PKP Pelatihan Kepemimpinan Pengawas
-                </div>
+<!-- OVERLAY DAN SIDEBAR MENU -->
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+<div class="sidebar-menu" id="sidebarMenu">
+<a href="#beranda" class="nav-link active" data-target="beranda" onclick="gantiHalaman('beranda'); toggleMenu();">Beranda</a>
+<a href="#profil" class="nav-link" data-target="profil" onclick="gantiHalaman('profil'); toggleMenu();">Profil</a>
+<a href="#layanan" class="nav-link" data-target="layanan" onclick="gantiHalaman('layanan'); toggleMenu();">Layanan</a>
+<a href="#portofolio" class="nav-link" data-target="portofolio" onclick="gantiHalaman('portofolio'); toggleMenu();">Portofolio</a>
+<a href="#kontak" class="nav-link" data-target="kontak" onclick="gantiHalaman('kontak'); toggleMenu();">Kontak</a>
+</div>
 
-                <p style="color: white; font-size: 0.9rem; margin: 30px auto; line-height: 1.5; max-width: 600px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
-                    Solusi Pengetikan, Desain dan Cetak Dokumen untuk Kebutuhan Tugas Diklat Anda
-                </p>
-            </div>
-            
-            <div class="bottom-section">
-                <button class="tombol-mulai" onclick="gantiHalaman('layanan')">Lihat Layanan</button>
-                
-                <div class="copyright">
-                    <p>Hak Cipta © 2026 AW Solutions</p>
-                    <p>Semua Hak Dilindungi</p>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- HALAMAN BERANDA -->
+<div id="beranda" class="page-content active hero-section">
+<div class="content-wrapper">
+<div class="text-center">
+<h1 class="judul-utama">Jasa Tugas Diklat</h1>
+
+<div class="item-layanan">
+<i class="fas fa-th-large" style="color: var(--warna-emas); margin-right: 8px;"></i>
+PKN Pelatihan Kepemimpinan Nasional, TK. II dan TK. I
+</div>
+<div class="item-layanan">
+<i class="fas fa-plus-square" style="color: var(--warna-emas); margin-right: 8px;"></i>
+PKA Pelatihan Kepemimpinan Administrator
+</div>
+<div class="item-layanan">
+<i class="fas fa-certificate" style="color: var(--warna-emas); margin-right: 8px;"></i>
+PKP Pelatihan Kepemimpinan Pengawas
+</div>
+
+<p style="color: white; font-size: 0.9rem; margin: 30px auto; line-height: 1.5; max-width: 600px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
+Solusi Pengetikan, Desain dan Cetak Dokumen untuk Kebutuhan Tugas Diklat Anda
+</p>
+</div>
+
+<div class="bottom-section">
+<button class="tombol-mulai" onclick="gantiHalaman('layanan')">Lihat Layanan</button>
+
+<div class="copyright">
+<p>Hak Cipta © 2026 AW Solutions</p>
+<p>Semua Hak Dilindungi</p>
+</div>
+</div>
+</div>
+</div>
         <!-- HALAMAN PROFIL -->
     <div id="profil" class="page-content">
         <div class="min-h-screen bg-white flex flex-col">
@@ -643,8 +645,9 @@
                 <p>Semua Hak Dilindungi</p>
             </div>
         </div>
-     </div>
-        <!-- HALAMAN LAYANAN -->
+    </div>
+
+    <!-- HALAMAN LAYANAN -->
     <div id="layanan" class="page-content">
         <div class="min-h-screen bg-white flex flex-col">
             <div class="py-2 px-4 text-center bg-gray-50 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]">
@@ -693,8 +696,8 @@
                 <div class="h-[150px] md:h-auto relative overflow-hidden bg-gray-200">
                     <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gedung Kantor" class="w-full h-full object-cover object-center">
                 </div>
-            </div>
-            
+             </div>
+                        
             <!-- FOOTER HAK CIPTA -->
             <div class="footer-biru">
                 <p>Hak Cipta © 2026 AW Solutions</p>
@@ -850,8 +853,74 @@
                 </div>
                 <div onclick="bukaFile('Majalah 02.jpg', 'gambar', 'Majalah hasil desain untuk kebutuhan tugas diklat PKA')" class="portfolio-item">
                     <div class="photo-area">
-                        <img src="Majalah 02.jpg" alt="
-                    <!-- BARIS 4 -->
+                        <img src="Majalah 02.jpg" alt="Majalah 02">
+                    </div>
+                    <button class="detail-button">
+                        <i class="fas fa-eye eye-icon"></i> Lihat Detail
+                    </button>
+                </div>
+                <div onclick="bukaFile('Majalah 03.jpg', 'gambar', 'Majalah hasil desain untuk kebutuhan tugas diklat PKP')" class="portfolio-item">
+                    <div class="photo-area">
+                        <img src="Majalah 03.jpg" alt="Majalah 03">
+                    </div>
+                    <button class="detail-button">
+                        <i class="fas fa-eye eye-icon"></i> Lihat Detail
+                    </button>
+                </div>
+
+                <!-- BARIS 2 -->
+                <div onclick="bukaFile('Majalah 04.jpg', 'gambar', 'Majalah hasil desain dengan desain modern dan rapi')" class="portfolio-item">
+                    <div class="photo-area">
+                        <img src="Majalah 04.jpg" alt="Majalah 04">
+                    </div>
+                    <button class="detail-button">
+                        <i class="fas fa-eye eye-icon"></i> Lihat Detail
+                    </button>
+                </div>
+                <div onclick="bukaFile('Banner 01.jpg', 'gambar', 'Banner hasil desain untuk kebutuhan pameran diklat')" class="portfolio-item">
+                    <div class="photo-area">
+                        <img src="Banner 01.jpg" alt="Banner 01">
+                    </div>
+                    <button class="detail-button">
+                        <i class="fas fa-eye eye-icon"></i> Lihat Detail
+                    </button>
+                </div>
+                <div onclick="bukaFile('Banner 02.jpg', 'gambar', 'Banner hasil desain dengan ukuran standar pameran')" class="portfolio-item">
+                    <div class="photo-area">
+                        <img src="Banner 02.jpg" alt="Banner 02">
+                    </div>
+                    <button class="detail-button">
+                        <i class="fas fa-eye eye-icon"></i> Lihat Detail
+                    </button>
+                </div>
+
+                <!-- BARIS 3 -->
+                <div onclick="bukaFile('Spanduk nama stand.jpg', 'gambar', 'Spanduk nama stand untuk kebutuhan pameran diklat')" class="portfolio-item">
+                    <div class="photo-area">
+                        <img src="Spanduk nama stand.jpg" alt="Spanduk">
+                    </div>
+                    <button class="detail-button">
+                        <i class="fas fa-eye eye-icon"></i> Lihat Detail
+                    </button>
+                </div>
+                <div onclick="bukaFile('Cetak Majalah 01.mp4', 'video', 'Proses pencetakan majalah dengan kualitas terbaik')" class="portfolio-item">
+                    <div class="photo-area">
+                        <video src="Cetak Majalah 01.mp4" alt="Proses Cetak"></video>
+                    </div>
+                    <button class="detail-button">
+                        <i class="fas fa-eye eye-icon"></i> Lihat Detail
+                    </button>
+                </div>
+                <div onclick="bukaFile('Cetak Majalah 02.mp4', 'video', 'Proses pencetakan majalah dengan mesin modern')" class="portfolio-item">
+                    <div class="photo-area">
+                        <video src="Cetak Majalah 02.mp4" alt="Proses Cetak"></video>
+                    </div>
+                    <button class="detail-button">
+                        <i class="fas fa-eye eye-icon"></i> Lihat Detail
+                    </button>
+                </div>
+
+                <!-- BARIS 4 -->
                 <div onclick="bukaFile('Backdrop 01.jpg', 'gambar', 'Backdrop hasil desain untuk kebutuhan pameran diklat')" class="portfolio-item">
                     <div class="photo-area">
                         <img src="Backdrop 01.jpg" alt="Backdrop 01">
@@ -876,110 +945,45 @@
                         <i class="fas fa-eye eye-icon"></i> Lihat Detail
                     </button>
                 </div>
-
             </div>
         </div>
+            </div>
 
-        <!-- FOOTER HAK CIPTA -->
-        <div class="footer-biru">
-            <p>Hak Cipta © 2026 AW Solutions</p>
-            <p>Semua Hak Dilindungi</p>
-        </div>
-    </div>
-
-    <!-- MODAL POPUP PORTOFOLIO -->
-    <div id="modalPorto" class="modal-porto">
-        <div class="modal-content-porto">
-            <span class="close-porto" onclick="tutupFile()">&times;</span>
-            <img id="gambarPorto" style="display: none;" alt="Detail Gambar">
-            <video id="videoPorto" controls style="display: none;" alt="Detail Video">
-                <source id="sumberVideo" src="" type="video/mp4">
-            </video>
-            <div id="keteranganPorto" class="detail-text"></div>
-        </div>
-    </div>
-
-    <!-- ============================================= -->
-    <!-- HALAMAN KONTAK - DITAMBAH TULISAN & TANGAN   -->
-    <!-- ============================================= -->
+    <!-- HALAMAN KONTAK -->
     <div id="kontak" class="page-content">
-        <div class="min-h-screen bg-gray-50 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')] py-10 px-4">
-            <div class="max-w-2xl mx-auto">
+        <div class="min-h-screen bg-white flex flex-col">
+            <div class="py-2 px-4 text-center bg-gray-50 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]">
+                <h1 class="font-black text-[clamp(1.8rem,5vw,2.2rem)] text-primary tracking-wide leading-tight">Kontak Kami</h1>
+                <h2 class="font-semibold text-[clamp(1rem,3vw,1.3rem)] text-gold relative inline-block pb-1 mt-0">
+                    Hubungi Kami
+                    <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/5 h-[2px] bg-gold"></span>
+                </h2>
+            </div>
+            <div class="w-full h-[1px] bg-gray-200"></div>
+            <div class="flex-grow flex flex-col justify-center items-center p-5 bg-gray-50">
                 
-                <!-- JUDUL -->
-                <div class="text-center mb-8">
-                    <h2 class="text-[clamp(1.8rem,5vw,2.5rem)] font-black text-primary mb-2">Hubungi Kami</h2>
-                    <div class="w-20 h-1 bg-gold mx-auto"></div>
-                </div>
-
-                <!-- BLOK INFORMASI KONTAK -->
-                <div class="bg-primary text-white p-6 rounded-xl shadow-lg mb-8">
-                    <p class="text-center text-lg mb-6">Silakan hubungi kami untuk pemesanan atau pertanyaan lebih lanjut:</p>
+                <div class="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
                     
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3 text-lg">
-                            <i class="fa fa-whatsapp text-2xl" style="color: #25D366;"></i>
-                            <span class="font-bold">0821 8766 2626</span>
-                        </div>
-                        <div class="text-center text-sm text-gold mb-4">
-                            👆 Klik Chat WhatsApp
-                        </div>
-
-                        <div class="flex items-center gap-3 text-lg">
-                            <i class="fa fa-whatsapp text-2xl" style="color: #25D366;"></i>
-                            <span class="font-bold">0859 7515 3455</span>
-                        </div>
-                        <div class="text-center text-sm text-gold mb-4">
-                            👆 Klik Chat WhatsApp
-                        </div>
-
-                        <div class="flex items-center gap-3 text-lg">
-                            <i class="fa fa-map-marker text-2xl text-gold"></i>
-                            <span class="font-bold">Makassar, Sulawesi Selatan</span>
-                        </div>
+                    <div class="mb-6 text-center">
+                        <h3 class="text-xl font-bold text-primary mb-2">WhatsApp</h3>
+                        <a href="https://wa.me/6282187662626" class="text-2xl font-bold text-primary hover:text-gold transition duration-300">0821 8766 2626</a>
+                        <div class="text-center text-sm text-gold mb-4">👆 Klik Chat WhatsApp</div>
+                        
+                        <a href="https://wa.me/6285975153455" class="text-2xl font-bold text-primary hover:text-gold transition duration-300">0859 7515 3455</a>
+                        <div class="text-center text-sm text-gold mb-4">👆 Klik Chat WhatsApp</div>
                     </div>
 
-                    <!-- TAMBAHAN KALIMAT TERIMA KASIH -->
-                    <p class="text-center text-base italic mt-6">
-                        "Terima kasih telah mengunjungi website kami"
-                    </p>
-
-                    <div class="mt-6 pt-6 border-t border-white/30">
-                        <h3 class="text-xl font-bold mb-4 text-gold">Jam Operasional</h3>
-                        <div class="space-y-2 text-base">
-                            <p>Senin - Jumat: 08.00 - 17.00 WITA</p>
-                            <p>Sabtu: 08.00 - 12.00 WITA</p>
-                            <p>Minggu & Hari Libur: Tutup</p>
-                        </div>
+                    <div class="mb-6 text-center">
+                        <h3 class="text-xl font-bold text-primary mb-2">Alamat</h3>
+                        <p class="text-base text-gray-700">Makassar, Sulawesi Selatan, Indonesia</p>
+                        <p class="text-center text-base italic mt-6">"Terima kasih telah mengunjungi website kami"</p>
                     </div>
-                </div>
 
-                <!-- FORM PESAN -->
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <h3 class="text-[clamp(1.3rem,4vw,1.6rem)] font-bold mb-6 text-primary text-center">Kirim Pesan</h3>
-                    <form class="space-y-5">
-                        <div>
-                            <label class="block text-base font-bold mb-2 text-gray-700">Nama Lengkap</label>
-                            <input type="text" placeholder="Masukkan nama Anda" class="w-full p-3 border-2 border-gray-300 focus:border-primary rounded-lg outline-none transition">
-                        </div>
-                        <div>
-                            <label class="block text-base font-bold mb-2 text-gray-700">Nomor WhatsApp</label>
-                            <input type="text" placeholder="Masukkan nomor WhatsApp" class="w-full p-3 border-2 border-gray-300 focus:border-primary rounded-lg outline-none transition">
-                        </div>
-                        <div>
-                            <label class="block text-base font-bold mb-2 text-gray-700">Pesan / Keterangan</label>
-                            <textarea rows="4" placeholder="Tulis pesan atau kebutuhan tugas diklat Anda" class="w-full p-3 border-2 border-gray-300 focus:border-primary rounded-lg outline-none transition"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white text-lg font-bold py-4 rounded-xl transition duration-300 shadow-md">
-                            Kirim Pesan
-                        </button>
-                    </form>
                 </div>
-
             </div>
 
             <!-- FOOTER HAK CIPTA -->
-            <div class="footer-biru mt-10">
+            <div class="footer-biru">
                 <p>Hak Cipta © 2026 AW Solutions</p>
                 <p>Semua Hak Dilindungi</p>
             </div>
@@ -988,76 +992,70 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        function toggleMenu() {
-            const sidebar = document.getElementById('sidebarMenu');
-            const overlay = document.getElementById('overlay');
-            sidebar.classList.toggle('active');
-            overlay.classList.toggle('active');
+        // Fungsi Menu
+        function gantiHalaman(id) {
+            var pages = document.querySelectorAll('.page-content');
+            var links = document.querySelectorAll('.sidebar-menu a');
+            
+            pages.forEach(page => page.classList.remove('active'));
+            links.forEach(link => link.classList.remove('active'));
+            
+            document.getElementById(id).classList.add('active');
+            event.target.classList.add('active');
         }
 
-        function gantiHalaman(targetId) {
-            document.querySelectorAll('.page-content').forEach(page => {
-                page.classList.remove('active');
-            });
-            document.getElementById(targetId).classList.add('active');
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-            });
-            document.querySelector(`.nav-link[data-target="${targetId}"]`).classList.add('active');
-            window.scrollTo(0, 0);
-        }
-
+        // Fungsi Modal
         function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'block';
+            document.getElementById(modalId).style.display = "block";
+            document.body.style.overflow = "hidden";
         }
 
         function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
+            document.getElementById(modalId).style.display = "none";
+            document.body.style.overflow = "auto";
         }
 
-        function bukaFile(namaFile, tipe, keterangan) {
-            const modal = document.getElementById('modalPorto');
-            const gambar = document.getElementById('gambarPorto');
-            const video = document.getElementById('videoPorto');
-            const sumberVideo = document.getElementById('sumberVideo');
-            const keteranganElem = document.getElementById('keteranganPorto');
-
-            gambar.style.display = 'none';
-            video.style.display = 'none';
-            gambar.src = '';
-            sumberVideo.src = '';
-
-            if(tipe === 'gambar') {
-                gambar.src = namaFile;
-                gambar.style.display = 'block';
-            } else if(tipe === 'video') {
-                sumberVideo.src = namaFile;
-                video.load();
-                video.style.display = 'block';
-            }
-
-            keteranganElem.textContent = keterangan;
-            modal.style.display = 'block';
-        }
-
-        function tutupFile() {
-            const modal = document.getElementById('modalPorto');
-            const video = document.getElementById('videoPorto');
-            modal.style.display = 'none';
-            video.pause();
-            video.currentTime = 0;
-        }
-
+        // Close when clicking outside
         window.onclick = function(event) {
-            if(event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+                document.body.style.overflow = "auto";
             }
-            if(event.target.classList.contains('modal-porto')) {
-                tutupFile();
+        }
+
+        // Fungsi Buka File
+        function bukaFile(file, type, caption) {
+            let content = '';
+            if(type === 'gambar') {
+                content = `<img src="${file}" alt="${caption}" style="max-width:100%; height:auto;">`;
+            } else if(type === 'video') {
+                content = `<video src="${file}" controls style="max-width:100%; height:auto;"></video>`;
             }
+            
+            const modalDiv = document.createElement('div');
+            modalDiv.style.position = 'fixed';
+            modalDiv.style.top = '0';
+            modalDiv.style.left = '0';
+            modalDiv.style.width = '100vw';
+            modalDiv.style.height = '100vh';
+            modalDiv.style.backgroundColor = 'rgba(0,0,0,0.9)';
+            modalDiv.style.display = 'flex';
+            modalDiv.style.justifyContent = 'center';
+            modalDiv.style.alignItems = 'center';
+            modalDiv.style.zIndex = '99999';
+            modalDiv.innerHTML = `
+                <div style="position:relative; max-width:90%; max-height:90%;">
+                    <span onclick="this.parentElement.parentElement.remove()" style="position:absolute; top:-40px; right:0; color:white; font-size:30px; cursor:pointer;">&times;</span>
+                    ${content}
+                    <p style="color:white; text-align:center; margin-top:10px;">${caption}</p>
+                </div>
+            `;
+            modalDiv.onclick = function() { this.remove(); }
+            document.body.appendChild(modalDiv);
         }
     </script>
 </body>
 </html>
+
     
-                                                                     
+                        
